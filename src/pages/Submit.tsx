@@ -1,5 +1,3 @@
-import SubmitButton from "../components/submit-button"
-
 
 export default function Submit(){
 
@@ -37,7 +35,9 @@ export default function Submit(){
 
             </div>
             
-            <SubmitButton/>
+            <a href = "https://www.google.com/?zx=1772829375394&no_sw_cr=1" target="_blank" rel="noopener noreferrer">
+            <button className="submit-button">Submit Here</button>
+            </a>
 
         </div>
     </>
