@@ -17,7 +17,7 @@ export default function Navbar() {
                 <Link to='/About'>About</Link>
             </p>
             <p>
-                <Link to='/Submit'>submit</Link>
+                <Link to='/Submit'>Submit</Link>
             </p>
             <p>
                 <Link to='/CurrentIssue'>Current Issue</Link>

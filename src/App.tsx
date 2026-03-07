@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Submit />} />
+        <Route path="/Submit" element={<Submit />} />
         <Route path="/CurrentIssue" element={<Submit content={setPageContent} />} /> {/** Replace with the dynamic issue loader*/}
       </Routes>
     </Router>
