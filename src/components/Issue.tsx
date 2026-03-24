@@ -8,9 +8,9 @@ export default function Issue() {
     const issueNumber = useParams().issue || ' error';
     const [articleData, setArticleData] = useState<string[]>(IssueRegistry[issueNumber])
 
-    useEffect(()=>{
+    useEffect(() => {
         setArticleData(IssueRegistry[issueNumber])
-    },[issueNumber])
+    }, [issueNumber])
 
     return <>
 
@@ -73,6 +73,12 @@ export default function Issue() {
                 gap: '2em'
             }}>
                 {articleData.map((value, idx) => {
+                    /**
+                     * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
+                     */
+                    if(false){
+                        return <></> // equivalent of returning nothing
+                    }
                     return <>
                         <Link to={`/ArticlePage/${value}`}
                             key={value + idx}
@@ -83,6 +89,7 @@ export default function Issue() {
                             }}>
                             {idx} <br /> {value}
                         </Link>
+                        <></>
                     </>
                 })}
 
