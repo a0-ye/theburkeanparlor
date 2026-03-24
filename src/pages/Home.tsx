@@ -1,4 +1,4 @@
-
+import { colors } from "../assets/colors"
 
 
 export default function Home() {
@@ -10,15 +10,15 @@ export default function Home() {
             width: '100%', height:'50%',
             alignItems: "center", justifyContent: "center", gap: '10vw',
             // padding: '5vh',
-            backgroundColor: '#233b27ff'
+            backgroundColor: colors.lightblue
         }}>
-            <div style={{ width: 300, height: 300, backgroundColor: '#306144ff', }}>
+            <div style={{ width: 300, height: 300, backgroundColor: colors.salmon, }}>
                 <h2>Small About about the website</h2>
                 <p>
                     Hello this is supposed to be the description
                 </p>
             </div>
-            <div id="img-container" style={{ width: 600, height: 300, backgroundColor: '#6d0101ff' }}>this is the image container   </div>
+            <div id="img-container" style={{ width: 600, height: 300, backgroundColor: '#a71b8fff' }}>this is the DEBUG image container   </div>
             {/* <div> I am so awesome. </div> */}
 
         </div>
@@ -27,7 +27,8 @@ export default function Home() {
             alignItems: "center", justifyContent: "center",
             width: '100%', height:'50%',
             // padding: '5vh',
-            backgroundColor: '#25233bff'
+            // backgroundColor: '#25233bff'
+            backgroundColor: 'white'
         }}>
             <h1 style={{ borderBottom: 'solid 2px white' }}> Current Issue: Theme</h1>
             <div style={{ display: 'flex', gap:'5em'}}>
