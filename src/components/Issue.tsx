@@ -4,18 +4,30 @@ import { IssueRegistry } from "../data/IssueRegistry"
 
 
 export default function Issue() {
-
-    const [articleData, setArticleData] = useState<string[]>(IssueRegistry[useParams().issue || 'error'])
+    const issueNumber = useParams().issue || ' error';
+    const [articleData, setArticleData] = useState<string[]>(IssueRegistry[issueNumber])
 
     return <>
 
         <div style={{ display: 'flex', width: '100%' }}>
 
-            <div> Image here</div>
+            <div id="Header" style={{ display: 'flex', padding: '1em' }}>
+                <img
+                    // src={img}
+                    alt="Issue related img here"
+                    style={{
+                        width: 100, height: 100, borderRadius: 100,
+                        padding: '1em'
+                    }}
+                />
 
-            <div>
-                <h1 style={{ borderBottom: 'solid 2px black' }}> Large Title</h1>
-                <div> Sub Heading</div>
+                <div>
+                    <div style={{
+                        borderBottom: 'solid 2px black',
+                        fontSize: '5em'
+                    }}> Issue {issueNumber}</div>
+                    <div> HEy! this is a description of the current issue. Put more things here and eventually its gonna be awesome.</div>
+                </div>
             </div>
 
 

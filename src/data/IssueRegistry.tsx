@@ -1,8 +1,7 @@
 /** How to use?
  * 
- * 
- * 1. Make list of Articles to render (by their IDs)
- * 
+ * 1. Make list of Articles to render (by their IDs, set in Article Registry)
+ * 2. When making a <Link to=..... />, send it to /Issue/ ISSUE_NUMBER 
  */
 
 
