@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { IssueRegistry } from "../data/IssueRegistry"
 import { colors } from "../assets/colors";
@@ -7,6 +7,10 @@ import { colors } from "../assets/colors";
 export default function Issue() {
     const issueNumber = useParams().issue || ' error';
     const [articleData, setArticleData] = useState<string[]>(IssueRegistry[issueNumber])
+
+    useEffect(()=>{
+        setArticleData(IssueRegistry[issueNumber])
+    },[issueNumber])
 
     return <>
 
