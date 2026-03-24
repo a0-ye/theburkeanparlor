@@ -1,3 +1,4 @@
+import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,16 +17,16 @@ function App() {
 
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Submit" element={<Submit />} />
-        <Route path="/Issue/:issue" element={<Issue />} /> {/** Replace with the dynamic issue loader*/}
-        <Route path='/ArticlePage/:id' element={<ArticlePage/>} />
-      </Routes>
-    </Router>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Submit" element={<Submit />} />
+          <Route path="/Issue/:issue" element={<Issue />} /> {/** Replace with the dynamic issue loader*/}
+          <Route path='/ArticlePage/:id' element={<ArticlePage />} />
+        </Routes>
+      </Router>
   );
 }
 

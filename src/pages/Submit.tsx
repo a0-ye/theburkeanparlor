@@ -4,10 +4,10 @@ export default function Submit(){
 
     return <>
         <div id="submit-container" style={{
-            display: 'flex', width: '100vw', height:'100vh',
+            display: 'flex', width: '100%', height:'100%',
             flexDirection:'column',
             alignItems: "center", justifyContent: "center", gap: '1vw',
-            padding:'5vh',
+            // padding:'5vh',
             backgroundColor: '#25233bff',
         }}>
             <div style={{ width: '50%', height: '70%', }}>
@@ -35,7 +35,7 @@ export default function Submit(){
 
             </div>
             
-            <a href = "https://www.google.com/?zx=1772829375394&no_sw_cr=1" target="_blank" rel="noopener noreferrer">
+            <a href = "https://www.google.com/" target="_blank" rel="noopener noreferrer">
             <button className="submit-button">Submit Here</button>
             </a>
 

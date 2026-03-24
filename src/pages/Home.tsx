@@ -6,10 +6,11 @@ export default function Home() {
 
     return <>
         <div id="tophalf-container" style={{
-            display: 'flex', width: '100vw',
+            display: 'flex', 
+            width: '100%', height:'50%',
             alignItems: "center", justifyContent: "center", gap: '10vw',
-            padding: '5vh',
-            backgroundColor: '#25233bff'
+            // padding: '5vh',
+            backgroundColor: '#233b27ff'
         }}>
             <div style={{ width: 300, height: 300, backgroundColor: '#306144ff', }}>
                 <h2>Small About about the website</h2>
@@ -24,8 +25,8 @@ export default function Home() {
         <div id="bottomhalf-container" style={{
             display: 'flex', flexDirection:'column',
             alignItems: "center", justifyContent: "center",
-            width: '100vw',
-            padding: '5vh',
+            width: '100%', height:'50%',
+            // padding: '5vh',
             backgroundColor: '#25233bff'
         }}>
             <h1 style={{ borderBottom: 'solid 2px white' }}> Current Issue: Theme</h1>
