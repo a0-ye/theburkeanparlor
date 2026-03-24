@@ -8,7 +8,7 @@ export default function Submit(){
             flexDirection:'column',
             alignItems: "center", justifyContent: "center", gap: '1vw',
             padding:'5vh',
-            backgroundColor: '#25233bff',
+            backgroundColor: '#DD9F86',
         }}>
             <div style={{ width: '50%', height: '70%', }}>
                 <h3>Current Theme: "Something"</h3>
