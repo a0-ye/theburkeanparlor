@@ -1,0 +1,27 @@
+
+#about-info{
+    flex-direction: row;
+}
+
+    #about-image{
+        order:1
+    }
+    #about-text{
+        order:0;
+        min-width: 300px;
+    
+    }
+
+@media (max-width:700px) {
+    /* activate only when width is <= 700 */
+    #about-info{
+        flex-direction: column;
+    }
+
+    #about-image{
+        order:0
+    }
+    #about-text{
+        order:1
+    }
+}
