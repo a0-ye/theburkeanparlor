@@ -10,7 +10,7 @@ import type { ArticleData } from '../components/ArticlePage';
 import stationary from './Articles/TheStationaryWorker.pdf'
 import annoyingthedead from "./Articles/AnnoyingTheDead.docx"
 
-export const PieceRegistry: Record<string, ArticleData> =    // <string, string> because the imports are a post-build filepath baked into the website.
+export const ArticleRegistry: Record<string, ArticleData> =    // <string, string> because the imports are a post-build filepath baked into the website.
 {
     "stationary": {
         id: "stationary",

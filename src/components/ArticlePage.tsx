@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ContentRenderer from "./ContentRenderer"
-import { PieceRegistry } from "../data/ArticleRegistry"
+import { ArticleRegistry } from "../data/ArticleRegistry"
 import alt from '../data/Pictures/rem.webp'
 
 export type ArticleData = {
@@ -22,7 +22,7 @@ export default function ArticlePage() {
     const [id, _] = useState(useParams().id || '')
 
     useEffect(() => {
-        const data = PieceRegistry[id]
+        const data = ArticleRegistry[id]
         console.log('id & data:',id, data)
         setTitle(data?.title || 'Error Title')
         setAuthor(data?.author || 'John Error (THIS IS AN ERROR)')

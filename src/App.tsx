@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/Submit" element={<Submit />} />
-        <Route path="/CurrentIssue" element={<Issue />} /> {/** Replace with the dynamic issue loader*/}
+        <Route path="/Issue/:issue" element={<Issue />} /> {/** Replace with the dynamic issue loader*/}
         <Route path='/ArticlePage/:id' element={<ArticlePage/>} />
       </Routes>
     </Router>

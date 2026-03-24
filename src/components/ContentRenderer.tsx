@@ -14,7 +14,6 @@ interface ContentRendererProps {
 }
 
 export default function ContentRenderer(props: ContentRendererProps) {
-    const [html, setHtml] = useState<string>('Loading...');
     const [loading, setLoading] = useState(false);
     const [numPages, setNumPages] = useState<number>(0);
     const docxContainerRef = useRef<HTMLDivElement>(null);

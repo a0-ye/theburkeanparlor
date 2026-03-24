@@ -20,7 +20,7 @@ export default function Navbar() {
                 <Link to='/Submit'>Submit</Link>
             </p>
             <p>
-                <Link to='/CurrentIssue'>Current Issue</Link>
+                <Link to='/Issue/1'>Current Issue</Link>
             </p>
 
         </div>
