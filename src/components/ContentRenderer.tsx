@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-// 1. Setup the PDF worker (Required)
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-// 2. Import CSS for text selection/links to work correctly
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import { renderAsync } from 'docx-preview';
@@ -25,14 +23,10 @@ export default function ContentRenderer(props: ContentRendererProps) {
             if (isDocx && docxContainerRef.current) {
                 setLoading(true);
                 try {
-                    // 1. Fetch the file as a Blob (Binary Large Object)
                     const response = await fetch(props.filepath);
                     const blob = await response.blob();
-
-                    // 2. Render it into our ref'd div
-                    // The second argument is a config object for styling
                     await renderAsync(blob, docxContainerRef.current, undefined, {
-                        className: "docx-render", // Custom class for CSS
+                        inWrapper: false,
                         ignoreWidth: false,
                         ignoreHeight: false,
                         breakPages: true,
@@ -48,9 +42,8 @@ export default function ContentRenderer(props: ContentRendererProps) {
         loadDocx();
     }, [props.filepath, isDocx]);
 
-    // --- RENDER LOGIC ---
 
-    // Scenario A: PDF Rendering
+    // RETURN LOGIC 
     if (isPdf) {
         return (
             <div className="pdf-viewer-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -58,8 +51,6 @@ export default function ContentRenderer(props: ContentRendererProps) {
                     file={props.filepath}
                     onLoadSuccess={({ numPages }) => setNumPages(numPages)}
                 >
-                    {/* This renders all pages in a list. 
-                        Alternatively, use a 'pageNumber' state for a flippable book style. */}
                     {Array.from(new Array(numPages), (_, index) => (
                         <>
                             <Page
@@ -74,8 +65,6 @@ export default function ContentRenderer(props: ContentRendererProps) {
             </div>
         );
     }
-
-    // Scenario B: DOCX Rendering (HTML)
     if (isDocx) {
         return (
             <div className="docx-viewer-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -83,11 +72,10 @@ export default function ContentRenderer(props: ContentRendererProps) {
                 <div
                     ref={docxContainerRef}
                     className="docx-container"
+                    style={{ backgroundColor: "#ffffffff" }}
                 />
             </div>
         );
     }
-
-    // Scenario C: Fallback
     return <p>Unsupported file format.</p>;
 }
