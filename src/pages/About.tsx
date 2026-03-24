@@ -35,7 +35,7 @@ export default function About() {
   return <>
     <div id="about-container" style={{
       display: 'flex', flexDirection: 'column',
-      alignItems: "center", justifyContent: "center", gap: '1vw',
+      alignItems: "center", gap: '1vw',
       width: '100%', height: '100%', maxHeight: 'fit-content',
     }}>
 
