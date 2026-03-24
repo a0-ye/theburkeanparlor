@@ -8,7 +8,7 @@ export default function Home() {
         <div id="tophalf-container" style={{
             display: 'flex', width: '100vw',
             alignItems: "center", justifyContent: "center", gap: '10vw',
-            padding:'5vh',
+            padding: '5vh',
             backgroundColor: '#25233bff'
         }}>
             <div style={{ width: 300, height: 300, backgroundColor: '#306144ff', }}>
@@ -22,14 +22,28 @@ export default function Home() {
 
         </div>
         <div id="bottomhalf-container" style={{
-            display: 'flex', width: '100vw',
-            alignItems: "center", justifyContent: "center", gap: '10vw',
-            padding:'5vh',
+            display: 'flex', flexDirection:'column',
+            alignItems: "center", justifyContent: "center",
+            width: '100vw',
+            padding: '5vh',
             backgroundColor: '#25233bff'
         }}>
-            <div style={{backgroundColor:'#ffeb33ff', 
-                width:100, height:100, borderRadius:25
-            }}> </div>
+            <h1 style={{ borderBottom: 'solid 2px white' }}> Current Issue: Theme</h1>
+            <div style={{ display: 'flex', gap:'5em'}}>
+                <div style={{
+                    backgroundColor: '#ffeb33ff',
+                    width: 100, height: 100, borderRadius: 25
+                }}> </div>
+                <div style={{
+                    backgroundColor: '#ffeb33ff',
+                    width: 100, height: 100, borderRadius: 25
+                }}> </div>
+                <div style={{
+                    backgroundColor: '#ffeb33ff',
+                    width: 100, height: 100, borderRadius: 25
+                }}> </div>
+            </div>
+
         </div>
     </>
 }

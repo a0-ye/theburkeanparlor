@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return <>
-        <div style={{
-            position: "fixed", top: '0%',
+        <div id='navbar' style={{
+            position: "fixed", top: '0%', zIndex:'5',
             display: "flex", gap:'10px',
             width: '100%', height: '3em',
             backgroundColor: '#fff',
