@@ -1,5 +1,6 @@
 
 import ProfileCard from '../components/ProfileCard';
+import '../styles/About.css'
 
 const teamMembers = [
   {
@@ -30,49 +31,48 @@ const teamMembers = [
 
 ];
 
-export default function About(){
+export default function About() {
   return <>
-  <div id="about-container" style={{
-            display: 'flex', width: '100vw', height:'100vh', maxHeight: 'fit-content', margin: '0 auto',
-            flexDirection:'column',
-            alignItems: "center", justifyContent: "center", gap: '1vw',
-            padding:'5vh',
-        }}>
-    
-    <div id="about-info" style={{
-        display: 'flex', width: '50%', height:'60%', maxHeight: 'fit-content',
-        alignItems: "flex-start", justifyContent: "center", gap: '5vw',
-        marginTop:'110vh', marginBottom:'30vh',
+    <div id="about-container" style={{
+      display: 'flex', flexDirection: 'column',
+      alignItems: "center", justifyContent: "center", gap: '1vw',
+      width: '100%', height: '100%', maxHeight: 'fit-content',
     }}>
-        <div id="about-text" style={{ marginTop: '-3vh',}}>
-            <h1>About Us</h1>
-            <p>
-                The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-            </p>
-            <p>
-              Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel? Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-              In, veritatis! Cum dolor autem laudantium quo, iusto numquam ipsum distinctio ipsa corrupti, esse velit aut. Vero iure nulla unde cum odit!
-            </p>
+
+      <div id="about-info" style={{
+        display: 'flex', maxHeight: 'fit-content', width:'60%',
+        alignItems: "center", justifyContent: 'center', gap: '5vw',
+        marginTop:'3em',
+      }}>
+        <div id="about-text" style={{}}>
+          <h1>About Us</h1>
+          <p>
+            The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
+          </p>
+          <p>
+            Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            In, veritatis! Cum dolor autem laudantium quo, iusto numquam ipsum distinctio ipsa corrupti, esse velit aut. Vero iure nulla unde cum odit!
+          </p>
         </div>
 
         <div id="about-image" >
-            <img src="https://placehold.co/350x350"/>
+          <img src="https://placehold.co/350x350" />
         </div>
-    </div>
-    
-    <h1>Masthead</h1>
-    
-    <div className="profile-container">
+      </div>
+
+      <h1>Masthead</h1>
+
+      <div className="profile-container">
         {teamMembers.map((member) => (
-            <ProfileCard
+          <ProfileCard
             key={member.name}
             name={member.name}
             description={member.description}
             image={member.image}
-            />
+          />
         ))}
-    </div>
+      </div>
     </div>
   </>
 }
