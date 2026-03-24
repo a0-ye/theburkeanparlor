@@ -57,6 +57,7 @@ export default function ContentRenderer(props: ContentRendererProps) {
                                 key={`page_${index + 1}`}
                                 pageNumber={index + 1}
                                 width={800}
+                                pageColors={{foreground: '#000000', background: '#ffffff'}}
                             />
                             <br />
                         </>
@@ -68,11 +69,13 @@ export default function ContentRenderer(props: ContentRendererProps) {
     if (isDocx) {
         return (
             <div className="docx-viewer-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <style>{`.docx { margin: 24px 0; background-color: rgb(255, 255, 255) }`}</style>
                 {loading && <p>Loading Document...</p>}
                 <div
                     ref={docxContainerRef}
                     className="docx-container"
-                    style={{ backgroundColor: "#ffffffff" }}
+                    style={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
+                    
                 />
             </div>
         );
