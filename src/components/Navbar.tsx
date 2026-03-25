@@ -8,18 +8,13 @@ import { useState } from "react";
 
 export default function Navbar() {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
-
     const handleMouseEnter = () => {
-        console.log('enter');
-
         setDropdownVisible(true);
     };
-
     const handleMouseLeave = () => {
-        console.log('exit');
-
         setDropdownVisible(false);
     };
+
     const linkStyle = {
         initial: {
             color: colors.blue
@@ -62,7 +57,7 @@ export default function Navbar() {
                 {makeLink(<Link to='/About'>About</Link>)}
                 {makeLink(<Link to='/Submit'>Submit</Link>)}
                 {makeLink(<Link to='/Issue/1'> Current Issue</Link>)}
-                <motion.p
+                <motion.p id="dropdown"
                     initial={linkStyle.initial}
                     whileHover={linkStyle.whileHover}
                     transition={linkStyle.transition}

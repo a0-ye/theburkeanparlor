@@ -1,15 +1,28 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { IssueRegistry } from "../data/IssueRegistry"
+import { IssueRegistry, type IssueData } from "../data/IssueRegistry"
+import { ArticleRegistry, ErrorArticleData } from "../data/ArticleRegistry";
 import { colors } from "../assets/colors";
 
 
+/**
+ * Evelyn questions:
+ *  
+ * 
+ * how should genre sorting work? worthwhile?
+ * [box | with | genres | click | to | toggle]
+ * 
+ * Page Layout: how?
+ * Center column?
+ * Left Align?
+ * 
+ */
 export default function Issue() {
     const issueNumber = useParams().issue || ' error';
-    const [articleData, setArticleData] = useState<string[]>(IssueRegistry[issueNumber])
+    const [selectedIssueData, setSelectedIssueData] = useState<IssueData>(IssueRegistry[issueNumber])
 
     useEffect(() => {
-        setArticleData(IssueRegistry[issueNumber])
+        setSelectedIssueData(IssueRegistry[issueNumber])
     }, [issueNumber])
 
     return <>
@@ -17,6 +30,7 @@ export default function Issue() {
         <div id="IssueMain" style={{
             display: 'flex', flexDirection: 'column',
             width: '100%', height: '100%',
+            // paddingLeft:'10vw',
             // justifyContent:'center'
             backgroundColor: colors.light
 
@@ -51,46 +65,59 @@ export default function Issue() {
                             textDecoration: 'underline'
                         }}> Issue {issueNumber}</div>
                         <div>
-                            HEy! this is a description of the current issue.
-                            <br />
-                            Put more things here and eventually its gonna be awesome.
+                            {selectedIssueData.description}
                         </div>
                     </div>
                 </div>
 
-                <div style={{ borderBottom: 'solid black 2px', margin: ' 3vh 15vw 3vh 15vw' }} />
+                <div style={{ border: "solid black 3px", margin: '10px 1vw 10px 1vw' }}> Hello put the filter here?</div>
 
-                <div> Hello put the filter here?</div>
-
-                <div style={{ borderBottom: 'solid black 2px', margin: ' 3vh 15vw 3vh 15vw' }} />
             </div>
 
 
             <div id="ArticleContainer" style={{
-                margin: '0 10% 0 10%',
-                display: "grid",
-                gridTemplateColumns: '1fr 1fr 1fr',
-                gap: '2em'
+                margin: '50px 10% 0 10%',
+                display: "flex",
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-evenly',
+                gap: '4em'
             }}>
-                {articleData.map((value, idx) => {
+                {selectedIssueData.articleList.map((value, idx) => {
                     /**
                      * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
                      */
-                    if(false){
+                    if (false) {
                         return <></> // equivalent of returning nothing
                     }
-                    return <>
+
+                    const selectedArticleData = ArticleRegistry[value] || ErrorArticleData
+
+                    return <div style={{
+                        flexBasis: '25%',   // this is a hack to limit to 3 items per row.... not sure if there's a better value to use
+                    }}>
+
                         <Link to={`/ArticlePage/${value}`}
                             key={value + idx}
                             style={{
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                display: 'flex', position: 'relative',
+                                alignItems: 'center', justifyContent: 'center',
                                 width: '200px', height: '200px', borderRadius: '100px',
                                 backgroundColor: colors.pinksalmon
                             }}>
-                            {idx} <br /> {value}
+                            {value} <br />
+                            {selectedArticleData.img || 'no image path found'} <br />
+                            {selectedArticleData.title}
+                            <div style={{
+                                position: 'absolute',
+                                bottom:'-12%',
+                                color: 'black'
+                            }}>
+                                {selectedArticleData.author}
+                            </div>
                         </Link>
                         <></>
-                    </>
+                    </div>
                 })}
 
             </div>
