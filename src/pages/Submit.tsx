@@ -59,6 +59,20 @@ export default function Submit() {
                 <p>
                     Each submitter is permitted to a maximum of 3 submissions (e.g. one prose piece, one poetry collection, and one visual; or three prose pieces; or two hybrid and one poetry collection, etc.). Submit one Google Form per piece (or in poetry’s case one collection). To withdraw a submission, please send an email to theburkeanparlor@gmail.com with your name, title of your piece(s) and "WITHDRAWAL" in the subject.
                 </p>
+                <ul>
+                    <li>Prose (Fiction/Nonfiction/Biography/Review/Think Piece)</li>
+                    <li>Maximum word count: 5000 words</li>
+                    <li>No scripts</li>
+                    <li>Poetry</li>
+                    <li>Submit up to 4 poems</li>
+                    <li>All poems on one document, each poem starting on a new page</li>
+                    <li>Visuals (Photography/Traditional Art/Digital Art)</li>
+                    <li>Submit up to 6 pieces of visual art</li>
+                    <li>Submit as separate files on one Google Form</li>
+                    <li>Hybrid</li>
+                    <li>Up to 10 pages for a single piece</li>
+                    <li>A combination of visual and written</li>
+                </ul>
                 <hr />
 
                 <h1>Deadlines - <span style={{ fontWeight: 'bold', color: '#ff5a5a' }}>SUBMISSIONS CLOSED </span> </h1>
@@ -72,24 +86,25 @@ export default function Submit() {
                         width: '100%', display: 'flex',
                         flexDirection: 'column',
                         alignItems: "center",
-                        marginTop:"3em"
+                        marginTop: "3em"
                     }}
                 >
 
                     <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
                         <motion.button className="submit-button"
-                            style={{ width: '100%', height: "100%", 
-                                alignSelf: 'center', 
-                                fontSize:'2em',
-                                borderRadius:'15px', padding:'1em',
-                                backgroundColor:colors.salmon,
-                                cursor:'pointer'
+                            style={{
+                                width: '100%', height: "100%",
+                                alignSelf: 'center',
+                                fontSize: '2em',
+                                borderRadius: '15px', padding: '1em',
+                                backgroundColor: colors.salmon,
+                                cursor: 'pointer'
                             }}
                             whileHover={{
-                                backgroundColor:colors.pink
+                                backgroundColor: colors.pink
                             }}
                             transition={{
-                                duration:0.25
+                                duration: 0.25
                             }}
                         >Make A Submission</motion.button>
                     </a>
