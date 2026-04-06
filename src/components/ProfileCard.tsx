@@ -10,7 +10,7 @@ export default function ProfileCard({ name, description, image }: ProfileCardPro
   return (
     <div className="profile-card">
         <div className="profile-image">
-          <img src={image} alt={name} />
+          <img src={image} alt={name+'_Picture'} style={{width:250, height:250}} />
         </div>
         <div className="profile-info">
           <h3 className="profile-name">{name}</h3>
