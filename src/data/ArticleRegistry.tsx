@@ -14,7 +14,7 @@ export type ArticleData = {
     id: string
     title: string
     author: string
-    img: string | undefined;
+    img: string | undefined;    // About the author needs to be ADDED
     filepath: string
 }
 

@@ -9,12 +9,7 @@ export type IssueData = {
     description: string | ReactElement,
     articleList: string[]
 }
-
-
 const placeholder = '__Placeholder__'
-
-
-
 /**
  * Copy Paste template!
 
@@ -22,22 +17,13 @@ const placeholder = '__Placeholder__'
         description: ,              // you can put a string or be fancier by writing using HTML tags
         articleList: [],
     },
-
-
-
-
-
  */
 
 export const IssueRegistry: Record<string, IssueData> =    // <string, string> because the imports are a post-build filepath baked into the website.
 {
     "1": {
-        description: <> Hello, this is the first article and custom to the first article. Genuine and unique, I am able to write as much hogwash as I want! <br/> 
-        I made a pagebreak, so I'm able to space this john out <span style={{fontStyle:'italic'}}>sooooooo (this is also a span)</span> awesomely, the huzz are going to be SWARMING me like flies. Skibbity toilet. was that tuff?
-        <br/>
-        <br/>
-        I did two breaks! hows that? heh....
-        
+        description: <> The theme for Volume 1 of The Burkean Parlor is “Echo.” We were drawn to “Echo” because of its promise of impermanence. The word that embodies the impression, and impressionability, of memory. The constant of cycles, and the boundaries of space. We hope it inspires you to think about the presence of the past as you move into the future.
+
         </>,
         articleList: ['stationary', 'AnnoyingTheDead', 'fakeid', 'fakeid', 'fakeid', 'fakeid'],
     },

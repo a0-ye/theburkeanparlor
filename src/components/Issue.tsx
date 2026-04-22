@@ -7,14 +7,31 @@ import { colors } from "../assets/colors";
 
 /**
  * Evelyn questions:
- *  
- * 
  * how should genre sorting work? worthwhile?
  * [box | with | genres | click | to | toggle]
+ *  Keep with only 4 filter options. Radio style 
  * 
- * Page Layout: how?
- * Center column?
- * Left Align?
+ * Fiction
+ * Nonfiction
+ * Poetry
+ * Visuals
+ * Hybrid 
+
+ * 
+ * 
+ * 
+ * Theme of issue 1: Echo
+ * header background make image? related to theme. can be loaded with IssueData
+ * 
+ * Real All issues page. just a copy of issue page but instead of articles its issues. FUTUREPROOFING
+ * 
+ * incorporate Articles into the page itself - make backgroudn same color as media
+ * gradient for nav bar border bottom.
+ * Nav bar - Image backgrtound, transparent bar for links and others.
+ * 
+ * // About the author needs to be ADDED to ArticlePage. Maybe need 2 images. One for the Author's picture, one associated with the piece itself
+ * 
+ * // add submission guidelines
  * 
  */
 export default function Issue() {
@@ -38,6 +55,7 @@ export default function Issue() {
         }}>
             <div style={{
                 backgroundColor: colors.darkblue
+
             }}>
 
 
@@ -46,7 +64,7 @@ export default function Issue() {
                     alignItems: 'center',
                     padding: '1em',
                     gap: '2em',
-                    backgroundColor: colors.darkblue
+                    backgroundColor: colors.darkblue,
 
                 }}>
                     <img
@@ -59,18 +77,32 @@ export default function Issue() {
                         }}
                     />
 
-                    <div>
+                    <div style={{
+                        textAlign: "center",
+
+                    }}>
                         <div style={{
+                            textAlign: "center",
                             fontSize: '5em',
                             textDecoration: 'underline'
-                        }}> Issue {issueNumber}</div>
+                        }}> Issue {issueNumber} - Echo { }</div>
                         <div>
                             {selectedIssueData.description}
                         </div>
                     </div>
                 </div>
 
-                <div style={{ border: "solid black 3px", margin: '10px 1vw 10px 1vw' }}> Hello put the filter here?</div>
+                <div style={{
+                    display: 'flex',
+                    border: "solid black 3px", margin: '10px 1vw 10px 1vw'
+                }}>
+                    <button style={{ border: 'solid black 2px' }}>Prose </button>
+                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
+                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
+                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
+
+
+                </div>
 
             </div>
 
@@ -110,7 +142,7 @@ export default function Issue() {
                             {selectedArticleData.title}
                             <div style={{
                                 position: 'absolute',
-                                bottom:'-12%',
+                                bottom: '-12%',
                                 color: 'black'
                             }}>
                                 {selectedArticleData.author}
