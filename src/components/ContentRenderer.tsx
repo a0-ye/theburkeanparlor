@@ -6,6 +6,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import { renderAsync } from 'docx-preview';
+import { colors } from '../assets/colors';
 
 interface ContentRendererProps {
     filepath: string;
@@ -53,13 +54,12 @@ export default function ContentRenderer(props: ContentRendererProps) {
                 >
                     {Array.from(new Array(numPages), (_, index) => (
                         <>
-                            <Page
+                            <Page 
                                 key={`page_${index + 1}`}
                                 pageNumber={index + 1}
                                 width={800}
-                                pageColors={{foreground: '#000000', background: '#ffffff'}}
+                                pageColors={{foreground: '#000000', background: colors.light}}
                             />
-                            <br />
                         </>
                     ))}
                 </Document>
@@ -69,7 +69,7 @@ export default function ContentRenderer(props: ContentRendererProps) {
     if (isDocx) {
         return (
             <div className="docx-viewer-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <style>{`.docx { margin: 24px 0; background-color: rgb(255, 255, 255) }`}</style>
+                <style>{`.docx { margin: 24px 0; background-color: ${colors.light} }`}</style>
                 {loading && <p>Loading Document...</p>}
                 <div
                     ref={docxContainerRef}

@@ -5,7 +5,7 @@ import { IssueRegistry } from "../data/IssueRegistry"
 
 export default function Issue() {
     const issueNumber = useParams().issue || ' error';
-    const [articleData, setArticleData] = useState<string[]>(IssueRegistry[issueNumber])
+    const [articleData] = useState<string[]>(IssueRegistry[issueNumber])
 
     return <>
 

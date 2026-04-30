@@ -28,7 +28,7 @@ export default function ArticlePage() {
         setAuthor(data?.author || 'John Error (THIS IS AN ERROR)')
         setImg(data?.img || alt)
         setFilepath(data?.filepath || 'Error Content')
-    }, [])
+    }, [id])
 
 
     return <div id="ArticlePageMain" style={{
@@ -52,7 +52,7 @@ export default function ArticlePage() {
         </div>
 
         <div id="content" style={{
-            // backgroundColor: "#525252ff", border:'solid #586e5aff 2px',
+            backgroundColor: "rgb(255, 137, 64)", border:'solid #586e5aff 2px',
             display:'flex', justifyContent:'center',
             width:'100%', maxWidth:'70%',
 
