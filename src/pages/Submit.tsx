@@ -10,12 +10,13 @@ export default function Submit() {
             alignItems: "center", justifyContent: "center", gap: '1vw',
             // padding:'5vh',
             backgroundColor: '#25233bff',
+            color: colors.light
         }}>
             <div id="column" style={{
                 width: '50%', marginTop: '6em', marginBottom: '6em',
 
             }}>
-                <h1>Current Theme: Echo</h1>
+                <h1 style={{textDecoration:'underline'}}>Current Theme: Echo</h1>
                 <p>
                     The theme for Volume 1 of The Burkean Parlor is “Echo.” We were drawn to “Echo” because of its promise of impermanence. The word that embodies the impression, and impressionability, of memory. The constant of cycles, and the boundaries of space. We hope it inspires you to think about the presence of the past as you move into the future.
                 </p>
@@ -29,7 +30,7 @@ export default function Submit() {
                 </ul>
                 <hr />
 
-                <h1>Submission Guidelines</h1>
+                <h2>Submission Guidelines</h2>
                 <p>
                     Submissions for Volume 1 of The Burkean Parlor are open until <span style={{ fontWeight: 'bold', color: colors.pinksalmon }}>February 28th of 2026</span>.
 

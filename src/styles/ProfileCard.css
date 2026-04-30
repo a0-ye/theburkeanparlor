@@ -12,7 +12,7 @@
 .profile-card { 
     display:flex; 
     border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px; 
+    padding: 30px; 
     width: 500px;
     height: 400px;
     max-width: 500px; 
@@ -37,7 +37,7 @@
 } 
 
 .profile-info p {
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
 } 
 
 .profile-image img { 
@@ -51,4 +51,9 @@
     display: flex; 
     flex-grow: 1; 
     margin-right: 20px;
+}
+
+.profile-description {
+    font-size: medium;
+    text-align: left;
 }

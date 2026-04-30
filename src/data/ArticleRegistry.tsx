@@ -16,7 +16,8 @@ export type ArticleData = {
     title: string
     author: string
     img: string | undefined;    // About the author needs to be ADDED
-    filepath: string
+    filepath: string,
+    genres: string[]
 }
 
 export const ErrorArticleData = {
@@ -25,6 +26,7 @@ export const ErrorArticleData = {
     author: '__article ID has no data__',
     img: undefined,
     filepath: '',
+    genres: []
 }
 
 export const ArticleRegistry: Record<string, ArticleData> =    // <string, string> because the imports are a post-build filepath baked into the website.
@@ -34,20 +36,26 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         title: "The Stationary Worker",
         author: "Gabriel Malek",
         img: undefined,
-        filepath: stationary
+        filepath: stationary,
+        genres: ['Prose']
+
     },
     "AnnoyingTheDead": {
         id: "AnnoyingTheDead",
         title: "Annoying the Dead",
         author: "Paris O'Brien",
         img: undefined,
-        filepath: annoyingthedead
+        filepath: annoyingthedead,
+        genres: ['Prose']
+
     },
     "AnnoyingTheDead2": {
         id: "AnnoyingTheDead",
         title: "Annoying the Dead",
         author: "Paris O'Brien",
-        img:undefined,
-        filepath: annoyingthedead2
+        img: undefined,
+        filepath: annoyingthedead2,
+        genres: []
+
     },
 };

@@ -5,6 +5,7 @@ import '../styles/About.css'
 import sn from '../data/Pictures/About/sn.jpeg'
 import jt from '../data/Pictures/About/jt.jpg'
 import tz from '../data/Pictures/About/tz.jpg'
+import { colors } from '../assets/colors';
 const teamMembers = [
   {
     name: "Sophie Najim",
@@ -31,41 +32,54 @@ export default function About() {
       alignItems: "center", gap: '1vw',
       width: '100%', height: '100%', maxHeight: 'fit-content',
     }}>
+      <div id='top-half' style={{
+        display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%',
+        backgroundColor: colors.pinksalmon,
 
-      <div id="about-info" style={{
-        display: 'flex', maxHeight: 'fit-content', width:'60%',
-        alignItems: "center", justifyContent: 'center', gap: '5vw',
-        marginTop:'3em',
       }}>
-        <div id="about-text" style={{}}>
-          <h1>About Us</h1>
-          <p>
-            The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-          </p>
-          <p>
-            Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            In, veritatis! Cum dolor autem laudantium quo, iusto numquam ipsum distinctio ipsa corrupti, esse velit aut. Vero iure nulla unde cum odit!
-          </p>
-        </div>
+        <div id="about-info" style={{
+          display: 'flex', maxHeight: 'fit-content', width: '60%',
+          alignItems: "center", justifyContent: 'center', gap: '5vw',
+          marginTop: '3em', marginBottom:'3em'
+        }}>
+          <div id="about-text" style={{}}>
+            <h1 style={{textDecoration:'underline'}}>About Us</h1>
+            <p>
+              The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
+            </p>
+            <p>
+              Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              In, veritatis! Cum dolor autem laudantium quo, iusto numquam ipsum distinctio ipsa corrupti, esse velit aut. Vero iure nulla unde cum odit!
+            </p>
+          </div>
 
-        <div id="about-image" >
-          <img src="https://placehold.co/350x350" />
+          <div id="about-image" >
+            <img src="https://placehold.co/350x350" />
+          </div>
         </div>
       </div>
 
-      <h1>Masthead</h1>
+      <h1 style={{textDecoration:'underline'}}>Masthead</h1>
+      <div id='bottom-half' style={{
+        display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%',
 
-      <div className="profile-container">
-        {teamMembers.map((member) => (
-          <ProfileCard
-            key={member.name}
-            name={member.name}
-            description={member.description}
-            image={member.image}
-          />
-        ))}
+      }}>
+
+        <div className="profile-container">
+          {teamMembers.map((member) => (
+            <ProfileCard
+              key={member.name}
+              name={member.name}
+              description={member.description}
+              image={member.image}
+            />
+          ))}
+        </div>
       </div>
+
+
+
     </div>
   </>
 }

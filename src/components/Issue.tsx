@@ -34,13 +34,18 @@ import { colors } from "../assets/colors";
  * // add submission guidelines
  * 
  */
-export default function Issue() {
-    const issueNumber = useParams().issue || ' error';
+interface IssueProps {
+    forcedIssueNumber?: number
+}
+
+export default function Issue(props: IssueProps) {
+    const issueNumber = useParams().issue || props.forcedIssueNumber || ' error';
     const [selectedIssueData, setSelectedIssueData] = useState<IssueData>(IssueRegistry[issueNumber])
 
     useEffect(() => {
         setSelectedIssueData(IssueRegistry[issueNumber])
     }, [issueNumber])
+    const [filter, setFilter] = useState<string | null>(null)
 
     return <>
 
@@ -71,6 +76,7 @@ export default function Issue() {
                         // src={img}
                         alt="Issue related img here"
                         style={{
+                            position: 'absolute',
                             width: 100, height: 100, borderRadius: 100,
                             padding: '1em',
                             backgroundColor: colors.brown
@@ -86,7 +92,9 @@ export default function Issue() {
                             fontSize: '5em',
                             textDecoration: 'underline'
                         }}> Issue {issueNumber} - Echo { }</div>
-                        <div>
+                        <div style={{
+                            margin: '0 150px 0 150px'
+                        }}>
                             {selectedIssueData.description}
                         </div>
                     </div>
@@ -96,11 +104,18 @@ export default function Issue() {
                     display: 'flex',
                     border: "solid black 3px", margin: '10px 1vw 10px 1vw'
                 }}>
-                    <button style={{ border: 'solid black 2px' }}>Prose </button>
-                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
-                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
-                    <button style={{ border: 'solid black 2px' }}> TEST DIV </button>
-
+                    <button style={{ border: 'solid black 2px', backgroundColor: filter == 'Prose' ? '#8fad23ff' : '' }} onClick={() => {
+                        filter == 'Prose' ? setFilter(null) : setFilter('Prose')
+                    }}> Prose </button>
+                    <button style={{ border: 'solid black 2px', backgroundColor: filter == 'Poetry' ? '#8fad23ff' : '' }} onClick={() => {
+                        filter == 'Poetry' ? setFilter(null) : setFilter('Poetry')
+                    }}> Poetry </button>
+                    <button style={{ border: 'solid black 2px', backgroundColor: filter == 'Visuals' ? '#8fad23ff' : '' }} onClick={() => {
+                        filter == 'Visuals' ? setFilter(null) : setFilter('Visuals')
+                    }}> Visuals </button>
+                    <button style={{ border: 'solid black 2px', backgroundColor: filter == 'Hybrid' ? '#8fad23ff' : '' }} onClick={() => {
+                        filter == 'Hybrid' ? setFilter(null) : setFilter('Hybrid')
+                    }}> Hybrid </button>
 
                 </div>
 
@@ -109,26 +124,29 @@ export default function Issue() {
 
             <div id="ArticleContainer" style={{
                 margin: '50px 10% 0 10%',
-                display: "flex",
-                flexWrap: 'wrap',
+                // display: "flex",
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr',
+                placeItems: 'center',
+                alignSelf: 'center', width: '100%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 gap: '4em'
             }}>
                 {selectedIssueData.articleList.map((value, idx) => {
-                    /**
-                     * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
-                     */
-                    if (false) {
-                        return <></> // equivalent of returning nothing
-                    }
 
                     const selectedArticleData = ArticleRegistry[value] || ErrorArticleData
+                    /**
+                     * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
+                    */
+                    let show = false
+                    if (filter == null || selectedArticleData.genres.includes(filter)){
+                        show = true
+                    }
+                    
 
-                    return <div style={{
-                        flexBasis: '25%',   // this is a hack to limit to 3 items per row.... not sure if there's a better value to use
-                    }}>
 
+                    return show && <>
                         <Link to={`/ArticlePage/${value}`}
                             key={value + idx}
                             style={{
@@ -148,8 +166,9 @@ export default function Issue() {
                                 {selectedArticleData.author}
                             </div>
                         </Link>
-                        <></>
-                    </div>
+                    </>
+
+
                 })}
 
             </div>
