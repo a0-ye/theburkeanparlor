@@ -20,7 +20,7 @@ export default function Navbar() {
             color: colors.blue
         },
         whileHover: {
-            color: '#535bf2'
+            color: '#ffccaeff'
 
         },
         transition: {
