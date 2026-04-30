@@ -35,7 +35,7 @@ a:hover {
 
 body {
   margin: 0;
-  padding-top:3em; 
+  padding-top:5em;  /* Padding for Nav Bar*/
   min-width: 320px;
   height: 100vh;
   box-sizing: border-box;

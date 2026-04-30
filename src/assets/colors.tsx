@@ -13,5 +13,6 @@ export const colors = {
     light: '#fDf5f4',
     lightblue: '#cedee2',
     blue: '#a6c2db',
+    darkblue: '#617f99ff',
     brown: '#463027',
 } as const;

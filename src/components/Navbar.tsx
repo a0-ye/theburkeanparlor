@@ -1,20 +1,41 @@
 import { Link } from "react-router-dom";
 import { colors } from "../assets/colors";
-import { motion } from "motion/react";
+import { color, motion } from "motion/react";
+import { useState } from "react";
 
 
 
 
 export default function Navbar() {
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const handleMouseEnter = () => {
+        setDropdownVisible(true);
+    };
+    const handleMouseLeave = () => {
+        setDropdownVisible(false);
+    };
 
     const linkStyle = {
         initial: {
             color: colors.blue
         },
         whileHover: {
-            color: '#535bf2'
+            color: '#ffccaeff'
 
+        },
+        transition: {
+            duration: 0.5
         }
+    }
+
+    function makeLink(content: any) {
+        return <motion.p
+            initial={linkStyle.initial}
+            whileHover={linkStyle.whileHover}
+            transition={linkStyle.transition}
+        >
+            {content}
+        </motion.p>
     }
 
     return <>
@@ -30,34 +51,41 @@ export default function Navbar() {
         }}>
             <div id="links" style={{
                 display: "flex", gap: '20px',
-                fontSize: '1.5em'
+                fontSize: '1.5em',
             }}>
-                <motion.p
+                {makeLink(<Link to='/'>Home</Link>)}
+                {makeLink(<Link to='/About'>About</Link>)}
+                {makeLink(<Link to='/Submit'>Submit</Link>)}
+                {makeLink(<Link to='/Issue/1'> Current Issue</Link>)}
+                <motion.p id="dropdown"
                     initial={linkStyle.initial}
                     whileHover={linkStyle.whileHover}
+                    transition={linkStyle.transition}
                 >
-                    <Link to='/'>Home</Link>
+                    <div style={{
+                        display: 'flex', position: 'relative',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <Link to='/Issue/1'> All Issues</Link>
+                        {isDropdownVisible && <div style={{
+                            position: 'absolute',
+                            width: '100%',
+                            top: '100%',
+                            backgroundColor: colors.light
+                        }}>
+                            {makeLink(<Link to='/Issue/1'> Issue 1</Link>)}
+                            {makeLink(<Link to='/Issue/2'> Issue 2</Link>)}
+                            {makeLink(<Link to='/Issue/3'> Issue 3</Link>)}
+
+
+
+                        </div>}
+                    </div>
                 </motion.p>
 
-                <motion.p
-                    initial={linkStyle.initial}
-                    whileHover={linkStyle.whileHover}>
-                    <Link to='/About'>About</Link>
-                </motion.p>
 
-                <motion.p
-                    initial={linkStyle.initial}
-                    whileHover={linkStyle.whileHover}>
-                    <Link to='/Submit'>Submit</Link>
-                </motion.p>
-
-                <motion.p
-                    initial={linkStyle.initial}
-                    whileHover={linkStyle.whileHover}>
-                    <Link to='/Issue/1'> Current Issue</Link>
-                </motion.p>
-
-            </div>
+            </div >
             <div id="name"
                 style={{
                     fontSize: '3em',
@@ -67,7 +95,7 @@ export default function Navbar() {
                 The Burkean Parlor
             </div>
 
-        </div>
+        </div >
     </>
 
 

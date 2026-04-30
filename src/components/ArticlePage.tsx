@@ -4,13 +4,6 @@ import ContentRenderer from "./ContentRenderer"
 import { ArticleRegistry } from "../data/ArticleRegistry"
 import alt from '../data/Pictures/rem.webp'
 
-export type ArticleData = {
-    id:string
-    title:string
-    author:string
-    img:string | undefined;
-    filepath:string
-}
 
 // interface ArticleProps {}
 
