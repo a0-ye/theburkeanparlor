@@ -2,31 +2,24 @@
 import ProfileCard from '../components/ProfileCard';
 import '../styles/About.css'
 
+import sn from '../data/Pictures/About/sn.jpeg'
+import jt from '../data/Pictures/About/jt.jpg'
+import tz from '../data/Pictures/About/tz.jpg'
 const teamMembers = [
   {
-    name: "John Smith",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "https://placehold.co/250x250"
+    name: "Sophie Najim",
+    description: "Before Sophie Najm joined USC for screenwriting, she majored in writing & literature, both working for and being published in multiple literary journals. She loves reading anything that shows the familiar in unfamiliar ways.",
+    image: sn
   },
   {
-    name: "Sarah Johnson",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://placehold.co/250x250"
+    name: "JT",
+    description: "His name is JT and he likes to party",
+    image: jt
   },
   {
-    name: "Michael Chen",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://placehold.co/250x250"
-  },
-  {
-    name: "Sarah Johnson",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://placehold.co/250x250"
-  },
-  {
-    name: "Sarah Johnson",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://placehold.co/250x250"
+    name: "Tony Zhu ",
+    description: "Tony Zhu started as a software engineer writing personal essays and poems on the side. His passion for art led him to quit tech in 2023, where he committed to various creative pursuits including filming video essays, making video games, and, of course, writing more. Now at USC, Tony spends most of his time writing scripts but still makes time to stay in touch with his left brain 🙂",
+    image: tz
   },
 
 ];
