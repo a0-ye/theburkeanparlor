@@ -153,6 +153,7 @@ export default function Issue(props: IssueProps) {
                                 display: 'flex', position: 'relative',
                                 alignItems: 'center', justifyContent: 'center',
                                 width: '200px', height: '200px', borderRadius: '100px',
+                                textAlign:'center',
                                 backgroundColor: colors.pinksalmon
                             }}>
                             {value} <br />

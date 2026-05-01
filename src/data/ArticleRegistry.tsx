@@ -2,13 +2,17 @@
  * 
  * 
  * 1. Upload Article to data/Articles
- * 
+ * 2. Import article from the filepath
+ * 3. fill out the entry under the article registry
  */
 
 
 import stationary from './Articles/TheStationaryWorker.pdf'
 import annoyingthedead from "./Articles/AnnoyingTheDead.docx"
-import annoyingthedead2 from "./Articles/AnnoyingTheDead2.docx"
+import ilovethestars from "./Articles/ilovethestars.docx"
+import lowtide from "./Articles/lowtide.pdf"
+import teeth from "./Articles/teeth.docx"
+import thankyou19 from "./Articles/thankyou19.pdf"
 
 
 export type ArticleData = {
@@ -49,13 +53,41 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         genres: ['Prose']
 
     },
-    "AnnoyingTheDead2": {
-        id: "AnnoyingTheDead",
-        title: "Annoying the Dead",
+    "ilovethestars": {
+        id: "ilovethestars",
+        title: "I Love the Stars that the Voyagers Will Crash Into",
         author: "Paris O'Brien",
         img: undefined,
-        filepath: annoyingthedead2,
-        genres: []
+        filepath: ilovethestars,
+        genres: ['Prose']
 
     },
-};
+    "lowtide": {
+        id: "lowtide",
+        title: "Low Tide",
+        author: "Devony Hof",
+        img: undefined,
+        filepath: lowtide,
+        genres: ['Prose']
+
+    },
+    "teeth": {
+        id: "teeth",
+        title: "Teeth",
+        author: "Paris O'Brien",
+        img: undefined,
+        filepath: teeth,
+        genres: ['Poetry']
+
+    },
+    "thankyou19": {
+        id: "thankyou19",
+        title: "Thank You, Have a Nice Day!",
+        author: "Doran J. Seff",
+        img: undefined,
+        filepath: thankyou19,
+        genres: ['Prose']
+
+    },
+
+}
