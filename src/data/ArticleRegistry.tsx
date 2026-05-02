@@ -19,7 +19,9 @@ export type ArticleData = {
     id: string
     title: string
     author: string
-    img: string | undefined;    // About the author needs to be ADDED
+    aboutauthor: string
+    articleImg: string | undefined;
+    authorImg: string | undefined;
     filepath: string,
     genres: string[]
 }
@@ -39,7 +41,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "stationary",
         title: "The Stationary Worker",
         author: "Gabriel Malek",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: stationary,
         genres: ['Prose']
 
@@ -48,7 +52,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "AnnoyingTheDead",
         title: "Annoying the Dead",
         author: "Paris O'Brien",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: annoyingthedead,
         genres: ['Prose']
 
@@ -57,7 +63,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "ilovethestars",
         title: "I Love the Stars that the Voyagers Will Crash Into",
         author: "Paris O'Brien",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: ilovethestars,
         genres: ['Prose']
 
@@ -66,7 +74,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "lowtide",
         title: "Low Tide",
         author: "Devony Hof",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: lowtide,
         genres: ['Prose']
 
@@ -75,7 +85,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "teeth",
         title: "Teeth",
         author: "Paris O'Brien",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: teeth,
         genres: ['Poetry']
 
@@ -84,7 +96,9 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         id: "thankyou19",
         title: "Thank You, Have a Nice Day!",
         author: "Doran J. Seff",
-        img: undefined,
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",        
+        articleImg: undefined,
+        authorImg: undefined,
         filepath: thankyou19,
         genres: ['Prose']
 

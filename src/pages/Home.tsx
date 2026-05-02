@@ -67,7 +67,7 @@ export default function Home() {
                                 backgroundColor: colors.pinksalmon
                             }}>
                             {value} <br />
-                            {selectedArticleData.img || 'no image path found'} <br />
+                            {selectedArticleData.articleImg || 'no image path found'} <br />
                             {selectedArticleData.title}
                             <div style={{
                                 position: 'absolute',
