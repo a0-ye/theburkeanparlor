@@ -69,7 +69,7 @@ export default function ContentRenderer(props: ContentRendererProps) {
     if (isDocx) {
         return (
             <div className="docx-viewer-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <style>{`.docx { margin: 24px 0; background-color: ${colors.light} }`}</style>
+                <style>{`.docx { margin: 24px 0; background-color: colors.light; color: #000000 !important }`}</style>
                 {loading && <p>Loading Document...</p>}
                 <div
                     ref={docxContainerRef}
