@@ -1,20 +1,23 @@
+import { colors } from '../assets/colors';
 import '../styles/ProfileCard.css';
 
 interface ProfileCardProps {
   name: string;
+  subtitle?:string;
   description: string;
   image: string;
 }
 
-export default function ProfileCard({ name, description, image }: ProfileCardProps) {
+export default function ProfileCard(props: ProfileCardProps) {
   return (
-    <div className="profile-card">
+    <div className="profile-card" style={{}}>
         <div className="profile-image">
-          <img src={image} alt={name+'_Picture'} style={{width:250, height:250}} />
+          <img src={props.image} alt={props.name+'_Picture'} style={{width:250, height:250}} />
         </div>
         <div className="profile-info">
-          <h3 className="profile-name">{name}</h3>
-          <p className="profile-description">{description}</p>
+          <div style={{ fontSize:'2em'}} className="profile-name">{props.name}</div>
+          <div style={{color:'#7e7e7e', fontStyle:'italic'}}> {props.subtitle}</div>
+          <p className="profile-description">{props.description}</p>
         </div>
     </div>
   );

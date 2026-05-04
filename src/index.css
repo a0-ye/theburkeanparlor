@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Georgia;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,30 +12,33 @@
 
   --salmon: #dd9f86;
   --pinksalmon: #ddbfb3;
-  --pink:#e6cdc4;
-  --light:#fDf5f4;
-  --lightblue:#cedee2;
-  --blue:#a6c2db;
-  --brown:#463027;
+  --pink: #e6cdc4;
+  --light: #fDf5f4;
+  --lightblue: #cedee2;
+  --blue: #a6c2db;
+  --brown: #463027;
   background-color: var(--light);
   color: rgba(42, 42, 42, 0.87);
 
 
 
 }
+
 /* Link Hovering */
 a {
   font-weight: 500;
   color: inherit;
   text-decoration: inherit;
 }
+
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 body {
   margin: 0;
-  padding-top:5em;  /* Padding for Nav Bar*/
+  padding-top: 5em;
+  /* Padding for Nav Bar*/
   min-width: 320px;
   height: 100vh;
   box-sizing: border-box;

@@ -1,26 +1,33 @@
 import { Link } from "react-router-dom"
-import { colors } from "../assets/colors"
+import { colors, sunsetfield } from "../assets/colors"
 import { ArticleRegistry, ErrorArticleData } from "../data/ArticleRegistry"
 import { IssueRegistry } from "../data/IssueRegistry"
 import { useState } from "react"
+import { motion } from "motion/react"
 
 
 export default function Home() {
 
     const selectedIssueData = IssueRegistry["1"]
 
-    return <>
+    return <div style={{
+        backgroundColor: sunsetfield.pink,
+        display: 'flex', flexDirection: 'column',
+        gap: '3em', height:'100%'
+
+    }}>
         <div id="tophalf-container" style={{
-            display: 'flex',
+            display: 'flex', paddingTop: '10vh',
             width: '100%', height: '50%',
             alignItems: "center", justifyContent: "center", gap: '10vw',
             // padding: '5vh',
-            backgroundColor: colors.lightblue
+            // backgroundColor: colors.lightblue
         }}>
-            <div style={{ width: 300, height: 300, backgroundColor: colors.salmon, }}>
-                <h2>Small About about the website</h2>
+            <div style={{ width: 300, height: 300, }}>
+                <h2>What We Are</h2>
                 <p>
-                    Hello this is supposed to be the description
+                    Hello this is supposed to be the description.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
             </div>
             <div id="img-container" style={{ width: 600, height: 300, backgroundColor: '#a71b8fff' }}>this is the DEBUG image container   </div>
@@ -33,56 +40,29 @@ export default function Home() {
             width: '100%',
             // padding: '5vh',
             // backgroundColor: '#25233bff'
-            backgroundColor: 'white'
         }}>
 
-            <h1 style={{ borderBottom: 'solid 2px white' }}> Current Issue: 1</h1>
-            <h2 style={{ borderBottom: 'solid 2px white' }}> Theme: Echo</h2>
-            <div style={{
-                margin: '50px 10% 0 10%',
-                // display: "flex",
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                placeItems:'center',
-                alignSelf: 'center', width: '100%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                gap: '4em'
-            }}>
-                {selectedIssueData.articleList.map((value, idx) => {
-                    /**
-                     * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
-                     */
-                    const selectedArticleData = ArticleRegistry[value] || ErrorArticleData
-                    
-
-                    return <div style={{}}>
-
-                        <Link to={`/ArticlePage/${value}`}
-                            key={value + idx}
-                            style={{
-                                display: 'flex', position: 'relative',
-                                alignItems: 'center', justifyContent: 'center',
-                                width: '200px', height: '200px', borderRadius: '100px',
-                                backgroundColor: colors.pinksalmon
-                            }}>
-                            {value} <br />
-                            {selectedArticleData.articleImg || 'no image path found'} <br />
-                            {selectedArticleData.title}
-                            <div style={{
-                                position: 'absolute',
-                                bottom: '-12%',
-                                color: 'black'
-                            }}>
-                                {selectedArticleData.author}
-                            </div>
-                        </Link>
-                        <></>
-                    </div>
-                })}
-
-            </div>
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                <motion.button className="submit-button"
+                    style={{
+                        width: '100%', height: "100%",
+                        alignSelf: 'center',
+                        fontSize: '2em',
+                        // borderRadius: '15px', 
+                        border: 'none',
+                        padding: '1em',
+                        cursor: 'pointer',
+                        color: sunsetfield.shell
+                    }}
+                    whileHover={{
+                        backgroundColor: sunsetfield.mauve2
+                    }}
+                    transition={{
+                        duration: 0.25
+                    }}
+                >Go To Current Issue</motion.button>
+            </a>
 
         </div>
-    </>
+    </div>
 }

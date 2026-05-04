@@ -33,7 +33,7 @@ export default function ArticlePage() {
         display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center',
     }}>
 
-        <div id='debug' style={{ position: 'absolute', color: '#79efffff', }}>article id: {id}</div>
+        {/* <div id='debug' style={{ position: 'absolute', color: '#79efffff', }}>article id: {id}</div> */}
 
         <div id="Header" style={{ display: 'flex', padding: '1em', position:'relative', maxWidth:'60%'}}>
             <div style={{position:'absolute', left:-115, top:'25%'}}>
@@ -54,7 +54,7 @@ export default function ArticlePage() {
         </div>
 
         <div id="content" style={{
-            backgroundColor: "rgb(255, 137, 64)", border: 'solid #586e5aff 2px',
+            backgroundColor: colors.light,
             display: 'flex', justifyContent: 'center',
             width: '100%', maxWidth: '70%',
 

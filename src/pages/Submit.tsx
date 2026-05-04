@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { colors } from "../assets/colors"
+import { colors, sunsetfield } from "../assets/colors"
 export default function Submit() {
 
 
@@ -9,30 +9,30 @@ export default function Submit() {
             flexDirection: 'column',
             alignItems: "center", justifyContent: "center", gap: '1vw',
             // padding:'5vh',
-            backgroundColor: '#25233bff',
-            color: colors.light
+            backgroundColor: sunsetfield.mauve, 
+            lineHeight:2
+            // color: colors.light
         }}>
+            
             <div id="column" style={{
-                width: '50%', marginTop: '6em', marginBottom: '6em',
+                width: '50%', marginBottom: '6em',
 
-            }}>
-                <h1 style={{textDecoration:'underline'}}>Current Theme: Echo</h1>
+            }}><div style={{fontSize:'5em'}}>
+                        Submissions
+                    </div><div>
+                        Please read the following guidelines carefully.
+                    </div>
+                <h1 style={{}}>Current Theme: Echo</h1>
                 <p>
                     The theme for Volume 1 of The Burkean Parlor is “Echo.” We were drawn to “Echo” because of its promise of impermanence. The word that embodies the impression, and impressionability, of memory. The constant of cycles, and the boundaries of space. We hope it inspires you to think about the presence of the past as you move into the future.
                 </p>
 
                 <hr />
 
-                <h3>Info</h3>
-                <ul>
-                    <li> _______DEV_______Note for organizers from developers: Need picture of the author, a picture that represents the article. I feel as if an ordered
-                        list of requirements may be needed. What do you think organizers? </li>
-                </ul>
-                <hr />
-
                 <h2>Submission Guidelines</h2>
                 <p>
-                    Submissions for Volume 1 of The Burkean Parlor are open until <span style={{ fontWeight: 'bold', color: colors.pinksalmon }}>February 28th of 2026</span>.
+                    Submissions for Volume 1 of The Burkean Parlor are open until <span style={{ fontWeight: 'bold', color: 
+                        sunsetfield.mauve2 }}>February 28th of 2026</span>.
 
                 </p>
                 <p>
@@ -44,7 +44,7 @@ export default function Submit() {
                     do not feel limited by the conventional definitions of genre. If it can exist in two dimensions, we will consider it.
                     However, we do not accept scripts or film submissions—there are other SCA magazines for that.
                 </p>
-                <span style={{ fontWeight: 'bold', color: colors.pinksalmon }}>
+                <span style={{ fontWeight: 'bold', color: sunsetfield.mauve2 }}>
                     {'We do not accept any submissions that use AI in any capacity. '}
                 </span>
                 Please submit in doc/docx and pdf format and remove any identifying information from the document, including your name.
@@ -76,10 +76,10 @@ export default function Submit() {
                 </ul>
                 <hr />
 
-                <h1>Deadlines - <span style={{ fontWeight: 'bold', color: '#ff5a5a' }}>SUBMISSIONS CLOSED </span> </h1>
+                <h1>Deadlines - <span style={{ fontWeight: 'bold', color: '#b22626' }}>SUBMISSIONS CLOSED </span> </h1>
                 <ul>
-                    <li>Submissions open: <span style={{ fontWeight: 'bold', color: colors.pinksalmon }}>January 1st, 2026</span></li>
-                    <li>Submissions close: <span style={{ fontWeight: 'bold', color: colors.pinksalmon }}>February 28th, 2026</span></li>
+                    <li>Submissions open: <span style={{ fontWeight: 'bold', color: sunsetfield.mauve2 }}>January 1st, 2026</span></li>
+                    <li>Submissions close: <span style={{ fontWeight: 'bold', color: sunsetfield.mauve2 }}>February 28th, 2026</span></li>
                 </ul>
                 <hr />
                 <div id="button-align-div"
@@ -97,12 +97,15 @@ export default function Submit() {
                                 width: '100%', height: "100%",
                                 alignSelf: 'center',
                                 fontSize: '2em',
-                                borderRadius: '15px', padding: '1em',
-                                backgroundColor: colors.salmon,
-                                cursor: 'pointer'
+                                // borderRadius: '15px', 
+                                border:'none',
+                                padding: '1em',
+                                backgroundColor: sunsetfield.blush,
+                                cursor: 'pointer',
+                                color:sunsetfield.shell
                             }}
                             whileHover={{
-                                backgroundColor: colors.pink
+                                backgroundColor: sunsetfield.mauve2
                             }}
                             transition={{
                                 duration: 0.25

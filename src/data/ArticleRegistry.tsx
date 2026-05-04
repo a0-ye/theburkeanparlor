@@ -6,13 +6,9 @@
  * 3. fill out the entry under the article registry
  */
 
-
-import stationary from './Articles/TheStationaryWorker.pdf'
-import annoyingthedead from "./Articles/AnnoyingTheDead.docx"
-import ilovethestars from "./Articles/ilovethestars.docx"
-import lowtide from "./Articles/lowtide.pdf"
+import lowtide from "./Articles/lowtide.docx"
 import teeth from "./Articles/teeth.docx"
-import thankyou19 from "./Articles/thankyou19.pdf"
+import thankyou from "./Articles/thankyou.docx"
 
 
 export type ArticleData = {
@@ -37,39 +33,6 @@ export const ErrorArticleData = {
 
 export const ArticleRegistry: Record<string, ArticleData> =    // <string, string> because the imports are a post-build filepath baked into the website.
 {
-    "stationary": {
-        id: "stationary",
-        title: "The Stationary Worker",
-        author: "Gabriel Malek",
-        aboutauthor: " ERROR________ TODO PLACEHOLDER",
-        articleImg: undefined,
-        authorImg: undefined,
-        filepath: stationary,
-        genres: ['Prose']
-
-    },
-    "AnnoyingTheDead": {
-        id: "AnnoyingTheDead",
-        title: "Annoying the Dead",
-        author: "Paris O'Brien",
-        aboutauthor: " ERROR________ TODO PLACEHOLDER",
-        articleImg: undefined,
-        authorImg: undefined,
-        filepath: annoyingthedead,
-        genres: ['Prose']
-
-    },
-    "ilovethestars": {
-        id: "ilovethestars",
-        title: "I Love the Stars that the Voyagers Will Crash Into",
-        author: "Paris O'Brien",
-        aboutauthor: " ERROR________ TODO PLACEHOLDER",
-        articleImg: undefined,
-        authorImg: undefined,
-        filepath: ilovethestars,
-        genres: ['Prose']
-
-    },
     "lowtide": {
         id: "lowtide",
         title: "Low Tide",
@@ -92,14 +55,14 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         genres: ['Poetry']
 
     },
-    "thankyou19": {
-        id: "thankyou19",
+    "thankyou": {
+        id: "thankyou",
         title: "Thank You, Have a Nice Day!",
         author: "Doran J. Seff",
         aboutauthor: " ERROR________ TODO PLACEHOLDER",        
         articleImg: undefined,
         authorImg: undefined,
-        filepath: thankyou19,
+        filepath: thankyou,
         genres: ['Prose']
 
     },

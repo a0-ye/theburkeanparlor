@@ -2,7 +2,9 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { IssueRegistry, type IssueData } from "../data/IssueRegistry"
 import { ArticleRegistry, ErrorArticleData } from "../data/ArticleRegistry";
-import { colors } from "../assets/colors";
+import { colors, sunsetfield } from "../assets/colors";
+import { isZeroValueString } from "motion";
+import { motion } from "motion/react";
 
 
 /**
@@ -41,12 +43,16 @@ interface IssueProps {
 export default function Issue(props: IssueProps) {
     const issueNumber = useParams().issue || props.forcedIssueNumber || ' error';
     const [selectedIssueData, setSelectedIssueData] = useState<IssueData>(IssueRegistry[issueNumber])
+    const MotionLink = motion(Link);
 
     useEffect(() => {
         setSelectedIssueData(IssueRegistry[issueNumber])
     }, [issueNumber])
     const [filter, setFilter] = useState<string | null>(null)
-
+    const ringVariants = {
+        initial: { opacity: 0, scale: 0.7 },
+        hover: { opacity: 1, scale: 1 }
+    };
     return <>
 
         <div id="IssueMain" style={{
@@ -54,35 +60,20 @@ export default function Issue(props: IssueProps) {
             width: '100%', height: '100%',
             // paddingLeft:'10vw',
             // justifyContent:'center'
-            backgroundColor: colors.light
-
+            backgroundColor: sunsetfield.periwinkle2
 
         }}>
             <div style={{
-                backgroundColor: colors.darkblue
+                backgroundColor: sunsetfield.periwinkle2
 
             }}>
-
-
                 <div id="Header" style={{
                     display: 'flex',
                     alignItems: 'center',
                     padding: '1em',
                     gap: '2em',
-                    backgroundColor: colors.darkblue,
 
                 }}>
-                    <img
-                        // src={img}
-                        alt="Issue related img here"
-                        style={{
-                            position: 'absolute',
-                            width: 100, height: 100, borderRadius: 100,
-                            padding: '1em',
-                            backgroundColor: colors.brown
-                        }}
-                    />
-
                     <div style={{
                         textAlign: "center",
 
@@ -90,17 +81,16 @@ export default function Issue(props: IssueProps) {
                         <div style={{
                             textAlign: "center",
                             fontSize: '5em',
-                            textDecoration: 'underline'
-                        }}> Issue {issueNumber} - Echo { }</div>
+                            // textDecoration: 'underline'
+                        }}> Issue {issueNumber} • Echo { }</div>
                         <div style={{
-                            margin: '0 150px 0 150px'
+                            margin: '0 150px 0 150px',
                         }}>
                             {selectedIssueData.description}
                         </div>
                     </div>
                 </div>
-
-                <div style={{
+                {/* <div style={{
                     display: 'flex',
                     border: "solid black 3px", margin: '10px 1vw 10px 1vw'
                 }}>
@@ -117,7 +107,7 @@ export default function Issue(props: IssueProps) {
                         filter == 'Hybrid' ? setFilter(null) : setFilter('Hybrid')
                     }}> Hybrid </button>
 
-                </div>
+                </div> */}
 
             </div>
 
@@ -140,33 +130,64 @@ export default function Issue(props: IssueProps) {
                      * FILTERING: check filter criteria. If met, return a link. if not, return a nothing burger
                     */
                     let show = false
-                    if (filter == null || selectedArticleData.genres.includes(filter)){
+                    if (filter == null || selectedArticleData.genres.includes(filter)) {
                         show = true
                     }
-                    
-
-
                     return show && <>
-                        <Link to={`/ArticlePage/${value}`}
+                        <MotionLink
+                            to={`/ArticlePage/${value}`}
                             key={value + idx}
+                            initial='initial'
+                            whileHover="hover"
                             style={{
                                 display: 'flex', position: 'relative',
                                 alignItems: 'center', justifyContent: 'center',
-                                width: '200px', height: '200px', borderRadius: '100px',
-                                textAlign:'center',
-                                backgroundColor: colors.pinksalmon
+                                width: '250px', height: '250px', borderRadius: '200px',
+                                backgroundColor: sunsetfield.periwinkle,
+                                overflow: 'visible'
+                            }}
+                        >
+                            <motion.div
+                                variants={ringVariants}
+                                style={{
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    backgroundColor: '#cfc7e2ff',
+                                    width: 185, height: 185, borderRadius: 500,
+                                    position: 'absolute',
+                                    pointerEvents: 'none'
+                                }}
+                            >
+                                <motion.div
+                                    variants={ringVariants}
+                                    style={{
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        backgroundColor: colors.light,
+                                        width: 125, height: 125, borderRadius: 500,
+                                        position: 'absolute',
+                                        pointerEvents: 'none'
+                                    }}
+                                >
+
+                                </motion.div>
+                            </motion.div>
+                            <div style={{
+                                color: 'black',
+                                pointerEvents: 'none',
+                                zIndex: 1,
                             }}>
-                            {value} <br />
-                            {selectedArticleData.articleImg || 'no image path found'} <br />
-                            {selectedArticleData.title}
+                                {selectedArticleData.title}
+                            </div>
+
                             <div style={{
                                 position: 'absolute',
-                                bottom: '-12%',
-                                color: 'black'
+                                bottom: '-15%',
+                                color: 'black',
+                                zIndex: 1
                             }}>
                                 {selectedArticleData.author}
                             </div>
-                        </Link>
+
+                        </MotionLink>
                     </>
 
 

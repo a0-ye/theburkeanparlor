@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { colors } from "../assets/colors";
+import { colors, sunsetfield } from "../assets/colors";
 import { color, motion } from "motion/react";
 import { useState } from "react";
 
@@ -17,14 +17,14 @@ export default function Navbar() {
 
     const linkStyle = {
         initial: {
-            color: colors.blue
+            color: '#806559'
         },
         whileHover: {
-            color: '#ffccaeff'
+            color: sunsetfield.blush
 
         },
         transition: {
-            duration: 0.5
+            duration: 0.1
         }
     }
 
@@ -47,7 +47,8 @@ export default function Navbar() {
             justifyContent: 'space-between', alignItems: "center",
             width: '100%',
             height: '5em',  /** IF THIS EVER CHANGES, CHANGE THE ONE IN INDEX.CSS AS WELL */
-            backgroundColor: colors.light,
+            backgroundColor: sunsetfield.shell,
+            boxShadow: '2px 2px 2px #80655944'
         }}>
             <div id="links" style={{
                 display: "flex", gap: '20px',
@@ -65,22 +66,23 @@ export default function Navbar() {
                     <div style={{
                         display: 'flex', position: 'relative',
                         alignItems: 'center',
-                        textAlign: 'center'
+                        textAlign: 'center',
                     }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         <Link to='/Issue/1'> All Issues</Link>
-                        {isDropdownVisible && <div style={{
-                            position: 'absolute',
-                            width: '100%',
-                            top: '100%',
-                            backgroundColor: colors.light
-                        }}>
+                        {isDropdownVisible && <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.15 }}
+                            style={{
+                                position: 'absolute',
+                                width: '100%',
+                                top: '100%',
+                                backgroundColor: sunsetfield.shell
+                            }}>
                             {makeLink(<Link to='/Issue/1'> Issue 1</Link>)}
                             {makeLink(<Link to='/Issue/2'> Issue 2</Link>)}
                             {makeLink(<Link to='/Issue/3'> Issue 3</Link>)}
-
-
-
-                        </div>}
+                        </motion.div>}
                     </div>
                 </motion.p>
 
