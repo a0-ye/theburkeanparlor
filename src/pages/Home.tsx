@@ -42,7 +42,7 @@ export default function Home() {
             // backgroundColor: '#25233bff'
         }}>
 
-            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+            <a href="/Issue/1" target="_blank" rel="noopener noreferrer">
                 <motion.button className="submit-button"
                     style={{
                         width: '100%', height: "100%",
