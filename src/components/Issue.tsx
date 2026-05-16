@@ -57,7 +57,7 @@ export default function Issue(props: IssueProps) {
 
         <div id="IssueMain" style={{
             display: 'flex', flexDirection: 'column',
-            width: '100%', height: '100%',
+            width: '100%', minHeight: '100%',
             // paddingLeft:'10vw',
             // justifyContent:'center'
             backgroundColor: sunsetfield.periwinkle2
@@ -113,15 +113,11 @@ export default function Issue(props: IssueProps) {
 
 
             <div id="ArticleContainer" style={{
-                margin: '50px 10% 0 10%',
-                // display: "flex",
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                placeItems: 'center',
-                alignSelf: 'center', width: '100%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                gap: '4em'
+                margin: '50px 15% 0 15%',
+                display: 'flex', maxWidth: '100%',
+                gap: '4em', justifyContent: 'center',
+                flexWrap: 'wrap', flexDirection: 'row',
+                alignItems: 'center'
             }}>
                 {selectedIssueData.articleList.map((value, idx) => {
 
@@ -133,7 +129,9 @@ export default function Issue(props: IssueProps) {
                     if (filter == null || selectedArticleData.genres.includes(filter)) {
                         show = true
                     }
-                    return show && <>
+                    return show && <div id="articleBubble" style={{
+                        textAlign:'center',
+                    }}>
                         <MotionLink
                             to={`/ArticlePage/${value}`}
                             key={value + idx}
@@ -142,12 +140,12 @@ export default function Issue(props: IssueProps) {
                             style={{
                                 display: 'flex', position: 'relative',
                                 alignItems: 'center', justifyContent: 'center',
-                                width: '250px', height: '250px', borderRadius: '200px',
+                                minWidth: '250px', height: '250px', borderRadius: '200px',
                                 backgroundColor: sunsetfield.periwinkle,
                                 overflow: 'visible'
                             }}
                         >
-                            <motion.div
+                            <motion.div id="rings"
                                 variants={ringVariants}
                                 style={{
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -178,17 +176,10 @@ export default function Issue(props: IssueProps) {
                                 {selectedArticleData.title}
                             </div>
 
-                            <div style={{
-                                position: 'absolute',
-                                bottom: '-15%',
-                                color: 'black',
-                                zIndex: 1
-                            }}>
-                                {selectedArticleData.author}
-                            </div>
-
                         </MotionLink>
-                    </>
+                        {selectedArticleData.author}
+
+                    </div>
 
 
                 })}

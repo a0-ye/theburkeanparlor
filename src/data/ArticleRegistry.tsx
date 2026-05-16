@@ -7,6 +7,7 @@
  */
 
 import lowtide from "./Articles/lowtide.docx"
+import ariadne from "./Articles/ariadne.docx"
 import teeth from "./Articles/teeth.docx"
 import thankyou from "./Articles/thankyou.docx"
 
@@ -41,6 +42,17 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         articleImg: undefined,
         authorImg: undefined,
         filepath: lowtide,
+        genres: ['Prose']
+
+    },
+    "ariadne": {
+        id: "ariadne",
+        title: "ariadne",
+        author: "Devony Hof",
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",
+        articleImg: undefined,
+        authorImg: undefined,
+        filepath: ariadne,
         genres: ['Prose']
 
     },
