@@ -10,6 +10,9 @@ import lowtide from "./Articles/lowtide.docx"
 import ariadne from "./Articles/ariadne.docx"
 import teeth from "./Articles/teeth.docx"
 import thankyou from "./Articles/thankyou.docx"
+import jew from "./Articles/Jew.docx"
+import toWhom from "./Articles/ToWhomItMayConcern.docx"
+import grief from "./Articles/Grief.docx"
 
 
 export type ArticleData = {
@@ -76,7 +79,36 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         authorImg: undefined,
         filepath: thankyou,
         genres: ['Prose']
-
+    },
+    "grief": {
+        id: "grief",
+        title: "Grief",
+        author: "Doran J. Seff",
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",        
+        articleImg: undefined,
+        authorImg: undefined,
+        filepath: grief,
+        genres: ['Prose']
+    },
+    "jew": {
+        id: "jew",
+        title: "Jew",
+        author: "Doran J. Seff",
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",        
+        articleImg: undefined,
+        authorImg: undefined,
+        filepath: jew,
+        genres: ['Prose']
+    },
+    "toWhom": {
+        id: "toWhom",
+        title: "To Whom It May Concern",
+        author: "Doran J. Seff",
+        aboutauthor: " ERROR________ TODO PLACEHOLDER",        
+        articleImg: undefined,
+        authorImg: undefined,
+        filepath: toWhom,
+        genres: ['Prose']
     },
 
 }

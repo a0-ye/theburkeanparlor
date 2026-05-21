@@ -25,7 +25,7 @@ export const IssueRegistry: Record<string, IssueData> =    // <string, string> b
         description: <> The theme for Volume 1 of The Burkean Parlor is “Echo.” We were drawn to “Echo” because of its promise of impermanence. The word that embodies the impression, and impressionability, of memory. The constant of cycles, and the boundaries of space. We hope it inspires you to think about the presence of the past as you move into the future.
 
         </>,
-        articleList: ["ariadne", "lowtide", "teeth", "thankyou"],
+        articleList: ["ariadne", "lowtide", "teeth", "thankyou", "grief", "jew", 'toWhom'],
     },
     "2": {
         description: placeholder,
