@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom"
-import { colors, sunsetfield } from "../assets/colors"
-import { ArticleRegistry, ErrorArticleData } from "../data/ArticleRegistry"
-import { IssueRegistry } from "../data/IssueRegistry"
-import { useState } from "react"
+
+import {  sunsetfield } from "../assets/colors"
+// import { IssueRegistry } from "../data/IssueRegistry"
 import { motion } from "motion/react"
 
 
 export default function Home() {
 
-    const selectedIssueData = IssueRegistry["1"]
+    // const selectedIssueData = IssueRegistry["1"]
 
     return <div style={{
         backgroundColor: sunsetfield.pink,

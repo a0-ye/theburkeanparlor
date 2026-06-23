@@ -7,7 +7,7 @@ import sn from '../data/Pictures/About/sn.jpeg'
 import jt from '../data/Pictures/About/jt.jpg'
 import tz from '../data/Pictures/About/tz.jpg'
 import ev from '../data/Pictures/About/ev.webp'
-import { colors, sunsetfield } from '../assets/colors';
+import { colors, } from '../assets/colors';
 const teamMembers = [
   {
     name: "Evelyn Davis",

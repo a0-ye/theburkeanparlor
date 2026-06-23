@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { colors, sunsetfield } from "../assets/colors";
-import { color, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 
 

@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom"
 import { IssueRegistry, type IssueData } from "../data/IssueRegistry"
 import { ArticleRegistry, ErrorArticleData } from "../data/ArticleRegistry";
 import { colors, sunsetfield } from "../assets/colors";
-import { isZeroValueString } from "motion";
 import { motion } from "motion/react";
 
 
@@ -48,7 +47,7 @@ export default function Issue(props: IssueProps) {
     useEffect(() => {
         setSelectedIssueData(IssueRegistry[issueNumber])
     }, [issueNumber])
-    const [filter, setFilter] = useState<string | null>(null)
+    const [filter, _] = useState<string | null>(null)
     const ringVariants = {
         initial: { opacity: 0, scale: 0.7 },
         hover: { opacity: 1, scale: 1 }

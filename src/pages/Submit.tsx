@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { colors, sunsetfield } from "../assets/colors"
+import { sunsetfield } from "../assets/colors"
 export default function Submit() {
 
 

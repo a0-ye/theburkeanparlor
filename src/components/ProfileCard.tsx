@@ -1,4 +1,4 @@
-import { colors } from '../assets/colors';
+
 import '../styles/ProfileCard.css';
 
 interface ProfileCardProps {
