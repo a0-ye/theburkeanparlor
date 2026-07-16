@@ -35,10 +35,10 @@ export default function Home() {
             </div>
             <div id="img-container" style={{
                 width: 'min(600px, 90vw)', height: 300, flex: '1 1 320px',
-                borderRadius: '16px',
-                backgroundImage: `radial-gradient(circle at 25% 25%, ${sunsetfield.blush} 0%, transparent 55%),
-                                   radial-gradient(circle at 80% 30%, ${sunsetfield.periwinkle} 0%, transparent 50%),
-                                   linear-gradient(135deg, ${sunsetfield.mauve} 0%, ${sunsetfield.olive} 100%)`,
+                borderRadius: '16px', background: 'grey',
+                // backgroundImage: `radial-gradient(circle at 25% 25%, ${sunsetfield.blush} 0%, transparent 55%),
+                //                    radial-gradient(circle at 80% 30%, ${sunsetfield.periwinkle} 0%, transparent 50%),
+                //                    linear-gradient(135deg, ${sunsetfield.mauve} 0%, ${sunsetfield.olive} 100%)`,
                 boxShadow: '0 12px 30px rgba(70, 48, 39, 0.25)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
@@ -46,7 +46,7 @@ export default function Home() {
                     fontFamily: 'var(--font-display)', fontStyle: 'italic',
                     fontSize: 'clamp(1.8em, 4vw, 2.6em)', color: colors.light,
                     textShadow: '0 2px 12px rgba(0,0,0,0.25)'
-                }}>Echo</span>
+                }}>Echo or some image here guys</span>
             </div>
 
         </div>

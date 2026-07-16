@@ -37,7 +37,7 @@ const teamMembers = [
   {
     name: "adrian",
     subtitle: 'Web Developer',
-    description: "Adrian is a software engineer with experience in a variety of different technologies who loves a good challenge to tackle",
+    description: "Adrian is a software engineer who enjoys working with a wide range of technologies and is always thinking a little too deeply about how everything fits into the big picture. They also did the website.",
     image: drool
   },
 

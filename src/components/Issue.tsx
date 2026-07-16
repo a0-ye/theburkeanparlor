@@ -52,6 +52,10 @@ export default function Issue(props: IssueProps) {
         initial: { opacity: 0, scale: 0.7 },
         hover: { opacity: 1, scale: 1 }
     };
+    const fadeVariants = {
+        initial: { opacity: 0 },
+        hover: { opacity: 1 }
+    };
     return <>
 
         <div id="IssueMain" style={{
@@ -130,17 +134,18 @@ export default function Issue(props: IssueProps) {
                     if (filter == null || selectedArticleData.genres.includes(filter)) {
                         show = true
                     }
-                    return show && <div id="articleBubble" key={value + idx} style={{
-                        textAlign:'center',
-                    }}>
+                    return show && <motion.div id="articleBubble" key={value + idx}
+                        initial="initial"
+                        whileHover="hover"
+                        style={{
+                            textAlign: 'center',
+                        }}>
                         <MotionLink
                             to={`/ArticlePage/${value}`}
-                            initial='initial'
-                            whileHover="hover"
                             style={{
                                 display: 'flex', position: 'relative',
                                 alignItems: 'center', justifyContent: 'center',
-                                minWidth: '250px', height: '250px', borderRadius: '200px',
+                                width: '250px', height: '250px', flexShrink: 0, borderRadius: '50%',
                                 backgroundColor: sunsetfield.periwinkle,
                                 boxShadow: '0 8px 20px rgba(70, 48, 39, 0.15)',
                                 overflow: 'visible'
@@ -175,19 +180,21 @@ export default function Issue(props: IssueProps) {
                                 zIndex: 1,
                                 fontFamily: 'var(--font-display)',
                                 fontWeight: 600,
-                                padding: '0 1.6em',
+                                fontSize: '0.95em',
+                                maxWidth: '65%',
+                                overflowWrap: 'break-word',
                             }}>
                                 {selectedArticleData.title}
                             </div>
 
                         </MotionLink>
-                        <div style={{
+                        <motion.div variants={fadeVariants} style={{
                             marginTop: '0.75em',
                             fontStyle: 'italic',
                             color: 'rgba(42,42,42,0.7)'
-                        }}>{selectedArticleData.author}</div>
+                        }}>{selectedArticleData.author}</motion.div>
 
-                    </div>
+                    </motion.div>
 
 
                 })}

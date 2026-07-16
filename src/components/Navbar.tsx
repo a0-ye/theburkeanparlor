@@ -1,21 +1,12 @@
 import { Link } from "react-router-dom";
 import { colors, sunsetfield } from "../assets/colors";
 import { motion } from "motion/react";
-import { useState } from "react";
 import "../styles/Navbar.css";
 
 
 
 
 export default function Navbar() {
-    const [isDropdownVisible, setDropdownVisible] = useState(false);
-    const handleMouseEnter = () => {
-        setDropdownVisible(true);
-    };
-    const handleMouseLeave = () => {
-        setDropdownVisible(false);
-    };
-
     const linkStyle = {
         initial: {
             color: colors.brown
@@ -59,37 +50,6 @@ export default function Navbar() {
                 {makeLink(<Link to='/About'>About</Link>)}
                 {makeLink(<Link to='/Submit'>Submit</Link>)}
                 {makeLink(<Link to='/Issue/1'> Current Issue</Link>)}
-                <motion.p id="dropdown"
-                    initial={linkStyle.initial}
-                    whileHover={linkStyle.whileHover}
-                    transition={linkStyle.transition}
-                >
-                    <div style={{
-                        display: 'flex', position: 'relative',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                    }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        <Link to='/Issue/1'> All Issues</Link>
-                        {isDropdownVisible && <motion.div
-                            initial={{ opacity: 0, y: -4 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.15 }}
-                            style={{
-                                position: 'absolute',
-                                minWidth: '100%',
-                                top: '100%',
-                                backgroundColor: sunsetfield.shell,
-                                borderRadius: '10px',
-                                padding: '0.5em 1em',
-                                boxShadow: '0 8px 20px rgba(70, 48, 39, 0.2)'
-                            }}>
-                            {makeLink(<Link to='/Issue/1'> Issue 1</Link>)}
-                            {makeLink(<Link to='/Issue/2'> Issue 2</Link>)}
-                            {makeLink(<Link to='/Issue/3'> Issue 3</Link>)}
-                        </motion.div>}
-                    </div>
-                </motion.p>
-
 
             </div >
             <div id="name"
