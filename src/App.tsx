@@ -17,9 +17,9 @@ function App() {
 
 
   return (
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Navbar />
-        <Routes>
+        <Routes >
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Submit" element={<Submit />} />
