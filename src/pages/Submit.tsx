@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { sunsetfield } from "../assets/colors"
+import { colors, sunsetfield } from "../assets/colors"
 export default function Submit() {
 
 
@@ -7,22 +7,28 @@ export default function Submit() {
         <div id="submit-container" style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: "center", justifyContent: "center", gap: '1vw',
-            // padding:'5vh',
+            alignItems: "center", justifyContent: "center", gap: '0.5em',
+            padding: '3em 1.5em 5em 1.5em',
             backgroundColor: sunsetfield.mauve,
-            lineHeight: 2
-            // color: colors.light
         }}>
-            <div style={{ fontSize: '5em' }}>
+            <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 'clamp(2.4em, 6vw, 4.5em)', color: colors.brown,
+                textAlign: 'center'
+            }}>
                 Submissions
             </div>
-            <div>
+            <div style={{ fontStyle: 'italic', color: colors.brown, marginBottom: '1em' }}>
                 Please read the following guidelines carefully.
             </div>
             <div id="column" style={{
-                // width: '50%', 
-                margin: '0 10% 0 10%',
-                marginBottom: '6em',
+                width: '100%',
+                maxWidth: '760px',
+                backgroundColor: colors.light,
+                borderRadius: '16px',
+                boxShadow: '0 12px 30px rgba(70, 48, 39, 0.2)',
+                padding: 'clamp(1.5em, 5vw, 3.5em)',
+                lineHeight: 1.75,
 
             }}>
 
@@ -99,21 +105,19 @@ export default function Submit() {
                 >
 
                     <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
-                        <motion.button className="submit-button"
+                        <motion.button className="btn-primary submit-button"
                             style={{
-                                width: '100%', height: "100%",
-                                alignSelf: 'center',
-                                fontSize: '2em',
-                                // borderRadius: '15px', 
-                                border: 'none',
-                                padding: '1em',
+                                fontSize: '1.3em',
+                                padding: '0.9em 2.2em',
                                 backgroundColor: sunsetfield.blush,
                                 cursor: 'pointer',
-                                color: sunsetfield.shell
+                                color: colors.light
                             }}
                             whileHover={{
-                                backgroundColor: sunsetfield.mauve2
+                                backgroundColor: sunsetfield.mauve2,
+                                scale: 1.03
                             }}
+                            whileTap={{ scale: 0.98 }}
                             transition={{
                                 duration: 0.25
                             }}

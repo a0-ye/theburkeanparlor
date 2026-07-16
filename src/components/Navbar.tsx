@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { colors, sunsetfield } from "../assets/colors";
 import { motion } from "motion/react";
 import { useState } from "react";
+import "../styles/Navbar.css";
 
 
 
@@ -17,10 +18,10 @@ export default function Navbar() {
 
     const linkStyle = {
         initial: {
-            color: '#806559'
+            color: colors.brown
         },
         whileHover: {
-            color: sunsetfield.blush
+            color: sunsetfield.mauve2
 
         },
         transition: {
@@ -70,14 +71,17 @@ export default function Navbar() {
                     }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         <Link to='/Issue/1'> All Issues</Link>
                         {isDropdownVisible && <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: -4 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.15 }}
                             style={{
                                 position: 'absolute',
-                                width: '100%',
+                                minWidth: '100%',
                                 top: '100%',
-                                backgroundColor: sunsetfield.shell
+                                backgroundColor: sunsetfield.shell,
+                                borderRadius: '10px',
+                                padding: '0.5em 1em',
+                                boxShadow: '0 8px 20px rgba(70, 48, 39, 0.2)'
                             }}>
                             {makeLink(<Link to='/Issue/1'> Issue 1</Link>)}
                             {makeLink(<Link to='/Issue/2'> Issue 2</Link>)}

@@ -56,9 +56,7 @@ export default function Issue(props: IssueProps) {
 
         <div id="IssueMain" style={{
             display: 'flex', flexDirection: 'column',
-            width: '100%', minHeight: '100%',
-            // paddingLeft:'10vw',
-            // justifyContent:'center'
+            width: '100%', minHeight: 'calc(100vh - 5em)',
             backgroundColor: sunsetfield.periwinkle2
 
         }}>
@@ -69,21 +67,25 @@ export default function Issue(props: IssueProps) {
                 <div id="Header" style={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '1em',
+                    padding: '3em 1em 2em 1em',
                     gap: '2em',
 
                 }}>
                     <div style={{
                         textAlign: "center",
-
+                        width: '100%',
                     }}>
                         <div style={{
                             textAlign: "center",
-                            fontSize: '5em',
-                            // textDecoration: 'underline'
-                        }}> Issue {issueNumber} • Echo { }</div>
+                            fontFamily: 'var(--font-display)',
+                            fontWeight: 600,
+                            fontSize: 'clamp(2.2em, 6vw, 4em)',
+                        }}> Issue {issueNumber} &bull; Echo</div>
                         <div style={{
-                            margin: '0 150px 0 150px',
+                            margin: '0 auto',
+                            maxWidth: '650px',
+                            padding: '0 1em',
+                            color: 'rgba(42,42,42,0.75)',
                         }}>
                             {selectedIssueData.description}
                         </div>
@@ -112,11 +114,11 @@ export default function Issue(props: IssueProps) {
 
 
             <div id="ArticleContainer" style={{
-                margin: '50px 15% 0 15%',
+                margin: '30px 8% 60px 8%',
                 display: 'flex', maxWidth: '100%',
-                gap: '4em', justifyContent: 'center',
+                gap: '3em 4em', justifyContent: 'center',
                 flexWrap: 'wrap', flexDirection: 'row',
-                alignItems: 'center'
+                alignItems: 'flex-start'
             }}>
                 {selectedIssueData.articleList.map((value, idx) => {
 
@@ -128,12 +130,11 @@ export default function Issue(props: IssueProps) {
                     if (filter == null || selectedArticleData.genres.includes(filter)) {
                         show = true
                     }
-                    return show && <div id="articleBubble" style={{
+                    return show && <div id="articleBubble" key={value + idx} style={{
                         textAlign:'center',
                     }}>
                         <MotionLink
                             to={`/ArticlePage/${value}`}
-                            key={value + idx}
                             initial='initial'
                             whileHover="hover"
                             style={{
@@ -141,6 +142,7 @@ export default function Issue(props: IssueProps) {
                                 alignItems: 'center', justifyContent: 'center',
                                 minWidth: '250px', height: '250px', borderRadius: '200px',
                                 backgroundColor: sunsetfield.periwinkle,
+                                boxShadow: '0 8px 20px rgba(70, 48, 39, 0.15)',
                                 overflow: 'visible'
                             }}
                         >
@@ -168,15 +170,22 @@ export default function Issue(props: IssueProps) {
                                 </motion.div>
                             </motion.div>
                             <div style={{
-                                color: 'black',
+                                color: '#2a2a2a',
                                 pointerEvents: 'none',
                                 zIndex: 1,
+                                fontFamily: 'var(--font-display)',
+                                fontWeight: 600,
+                                padding: '0 1.6em',
                             }}>
                                 {selectedArticleData.title}
                             </div>
 
                         </MotionLink>
-                        {selectedArticleData.author}
+                        <div style={{
+                            marginTop: '0.75em',
+                            fontStyle: 'italic',
+                            color: 'rgba(42,42,42,0.7)'
+                        }}>{selectedArticleData.author}</div>
 
                     </div>
 

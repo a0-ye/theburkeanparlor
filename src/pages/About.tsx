@@ -49,8 +49,8 @@ export default function About() {
   return <>
     <div id="about-container" style={{
       display: 'flex', flexDirection: 'column',
-      alignItems: "center", gap: '1vw',
-      // width: '100%', height: '100%', 
+      alignItems: "center", gap: '3em',
+      paddingBottom: '4em',
     }}>
       <div id='top-half' style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%',
@@ -58,12 +58,12 @@ export default function About() {
 
       }}>
         <div id="about-info" style={{
-          display: 'flex', maxHeight: 'fit-content', width: '60%',
+          display: 'flex', maxHeight: 'fit-content', width: '100%', maxWidth: '1100px',
           alignItems: "center", justifyContent: 'center', gap: '5vw',
-          marginTop: '3em', marginBottom: '3em'
+          marginTop: '3em', marginBottom: '3em', padding: '0 1.5em'
         }}>
           <div id="about-text" style={{}}>
-            <h1 style={{}}>About Us</h1>
+            <h1>About Us</h1>
             <p>
               The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
@@ -75,12 +75,15 @@ export default function About() {
           </div>
 
           <div id="about-image" >
-            <img src="https://placehold.co/350x350" />
+            <img src="https://placehold.co/350x350" style={{
+              borderRadius: '12px', boxShadow: '0 10px 26px rgba(70, 48, 39, 0.25)',
+              maxWidth: '100%', height: 'auto'
+            }} />
           </div>
         </div>
       </div>
 
-      <h1 style={{}}>Masthead</h1>
+      <h1 style={{ textAlign: 'center' }}>Masthead</h1>
       <div id='bottom-half' style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%',
 
@@ -99,12 +102,16 @@ export default function About() {
         </div>
       </div>
 
-      <div id='contact-footer' style={{ 
-        backgroundColor: '#ff0101',
-        width: '100%', margin: '0 10% 0 10%'
+      <div id='contact-footer' style={{
+        backgroundColor: colors.brown,
+        color: colors.light,
+        width: '100%', maxWidth: '900px', margin: '0 1.5em',
+        borderRadius: '16px',
+        padding: '2.5em 2em',
+        textAlign: 'center'
       }}>
-        <h1>Contact Us</h1>
-        <p> thisisanemail@mailroom.com</p>
+        <h1 style={{ color: colors.light }}>Contact Us</h1>
+        <p style={{ margin: 0 }}>thisisanemail@mailroom.com</p>
       </div>
 
 
