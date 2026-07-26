@@ -8,7 +8,6 @@
 
 import lowtide from "./Articles/lowtide.docx"
 import ariadne from "./Articles/ariadne.docx"
-import teeth from "./Articles/teeth.docx"
 import thankyou from "./Articles/thankyou.docx"
 import jew from "./Articles/Jew.docx"
 import toWhom from "./Articles/ToWhomItMayConcern.docx"
@@ -57,17 +56,6 @@ export const ArticleRegistry: Record<string, ArticleData> =    // <string, strin
         authorImg: undefined,
         filepath: ariadne,
         genres: ['Prose']
-
-    },
-    "teeth": {
-        id: "teeth",
-        title: "Teeth",
-        author: "Paris O'Brien",
-        aboutauthor: " ERROR________ TODO PLACEHOLDER",
-        articleImg: undefined,
-        authorImg: undefined,
-        filepath: teeth,
-        genres: ['Poetry']
 
     },
     "thankyou": {
