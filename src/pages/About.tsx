@@ -11,7 +11,7 @@ import { colors, } from '../assets/colors';
 const teamMembers = [
   {
     name: "Evelyn Davis",
-    description: "Evelyn Davis is a Screenwriting MFA Candidate and USC’s School of Cinematic Arts. Prior to joining USC, Evelyn worked in production on film and TV sets. Evelyn has a bachelor’s degree from Scripps College in media studies, with a minor in political science, and is endlessly passionate about applying both to write stories that capture national identity and national memory on screen.",
+    description: "Prior to joining USC for her screenwriting MFA, Evelyn Davis worked in production on film sets. She has a bachelor’s degree from Scripps College in media studies, with a minor in political science, and enjoys applying both to read and write stories about the complexities of national memory.",
     subtitle: 'Editor-in-Chief',
     image: ev
   },
@@ -65,12 +65,7 @@ export default function About() {
           <div id="about-text" style={{}}>
             <h1>About Us</h1>
             <p>
-              The Burkean Parlor Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-            </p>
-            <p>
-              Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              In, veritatis! Cum dolor autem laudantium quo, iusto numquam ipsum distinctio ipsa corrupti, esse velit aut. Vero iure nulla unde cum odit!
+              The Burkean Parlor was founded in 2025. We are a team with diverse interests and backgrounds, but when it comes to submissions, we are each always seeking works with intentionality and perspective.
             </p>
           </div>
 

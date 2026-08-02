@@ -29,8 +29,17 @@ export default function Home() {
                 }}>The Burkean Parlor</div>
                 <h2 style={{ fontSize: 'clamp(1.8em, 3vw, 2.4em)' }}>What We Are</h2>
                 <p style={{ color: 'rgba(42,42,42,0.8)' }}>
-                    Hello this is supposed to be the description.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laudantium at voluptate fugiat repellendus similique ea dolore reiciendis officiis velit ullam qui dicta rerum a quo non, omnis, deleniti vel?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    The Burkean Parlor is an online literary journal for USC’s School of 
+                    Cinematic Arts graduate student community. Cinema is a fantastic medium that sits
+                     in the center of many converging art forms. But, cinema is still an industry. 
+                     The Burkean Parlor seeks to provide a creative outlet for 
+                     students: art for art’s sake. Poetry, prose, visual art, 
+                     and photography all have a home here. 
+
+                    <br></br>
+                    <br></br>
+
+                     The Burkean Parlor refers to the metaphor by the same name from Kenneth Burke’s The Philosophy of Literary Form (1973). It boils down to the idea that any time you create a piece of work, you are entering an existing conversation. No creative endeavor exists in isolation, and every creative pursuit contributes to a historical conversation. It is important to listen to the people who came before you, and consider both your entrance into and exit from the parlor of discourse. 
                 </p>
             </div>
             <div id="img-container" style={{
