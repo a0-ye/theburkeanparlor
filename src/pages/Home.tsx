@@ -14,13 +14,18 @@ export default function Home() {
         backgroundColor: sunsetfield.pink,
     }}>
         <div id="hero-container">
-            <div id="hero-text">
-                <div style={{
+            <div id="hero-title">
+                <div className="hero-eyebrow" style={{
                     fontFamily: 'var(--font-display)', fontWeight: 600,
                     letterSpacing: '0.12em', textTransform: 'uppercase',
-                    fontSize: '0.85em', color: sunsetfield.mauve2, marginBottom: '0.5em'
+                    fontSize: '0.85em', marginBottom: '0.5em'
                 }}>The Burkean Parlor</div>
                 <h2 style={{ fontSize: 'clamp(1.8em, 3vw, 2.4em)' }}>What We Are</h2>
+            </div>
+            <div id="hero-image-container">
+                <img src={mainart} />
+            </div>
+            <div id="hero-body">
                 <p style={{ color: 'rgba(42,42,42,0.8)', maxWidth: 520, }}>
                     The Burkean Parlor is an online literary journal for USC’s School of
                     Cinematic Arts graduate student community. Cinema is a fantastic medium that sits
@@ -54,9 +59,6 @@ export default function Home() {
                         }}
                     >Go To Current Issue</motion.button>
                 </Link>
-            </div>
-            <div id="hero-image-container">
-                <img src={mainart} />
             </div>
         </div>
     </div>
