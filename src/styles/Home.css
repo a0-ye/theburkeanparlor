@@ -1,0 +1,42 @@
+#hero-container {
+  display: flex;
+  min-height: calc(100vh - 5em);
+}
+
+#hero-text {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8vh 6vw;
+  text-align: center;
+}
+
+#hero-image-container {
+  flex: 1 1 50%;
+  overflow: hidden;
+}
+
+#hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  #hero-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  #hero-text {
+    padding: 6vh 6vw;
+  }
+
+  #hero-image-container {
+    flex: none;
+    height: 320px;
+  }
+}
